@@ -56,7 +56,13 @@ def get_dashboard_data():
         # Get recent alerts (last 30 days)
         recent_alerts = frappe.get_all(
             "Alert",
-            fields=["name", "title", "description", "alert_type", "entity", "date", "status"],
+            # fields=["name", "alert_type", "status"],
+            fields=[
+                "name", "alert_type", "business", "personnel", "vehicle",
+                "status", "bill_to", "document_type", "document_id",
+                "date_of_issue", "date_of_expiry", "expires_in", 
+                "linked_service_estimate", "creation", "modified"
+            ],
             filters={"date_of_expiry": [">=", frappe.utils.add_days(frappe.utils.nowdate(), -30)]},
             order_by="date_of_expiry desc",
             limit=10
@@ -71,7 +77,7 @@ def get_dashboard_data():
             fields=["name", "company_name", "licence_expiry_date as expiry_date"],
             filters={"licence_expiry_date": [">=", frappe.utils.nowdate()]},
             order_by="licence_expiry_date asc",
-            limit=10
+            limit=100   # Increased limit to get more businesses
         )
         
         for doc in business_docs:
@@ -89,7 +95,7 @@ def get_dashboard_data():
                 ["passport_date_of_expiry", ">=", frappe.utils.nowdate()]
             ],
             order_by="passport_date_of_expiry asc",
-            limit=10
+            limit=100   # Increased limit to get more personnel
         )
         
         # Add passport entries if they exist
@@ -108,16 +114,16 @@ def get_dashboard_data():
         # Get recent works
         recent_works = frappe.get_all(
             "Work",
-            fields=["name", "service_name as title", "work_creation_date as creation", "notes as duration"],
+            fields=["name", "service_name", "work_creation_date", "notes as duration"],
             order_by="creation desc",
-            limit=5
+            limit=50
         )
         
         # Format the works for display
         formatted_works = [{
-            "title": work.title,
-            "date": work.creation,
-            "duration": f"{work.duration or 30} min" if work.duration else "30 min"
+            "title": work.service_name,
+            "date": work.work_creation_date,
+            # "duration": f"{work.duration or 30} min" if work.duration else "30 min"
         } for work in recent_works]
         
         return {
