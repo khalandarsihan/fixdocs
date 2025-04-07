@@ -1,5 +1,5 @@
 // src/components/Alerts/index.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Alerts = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -12,19 +12,20 @@ const Alerts = ({ data }) => {
   // Filter alerts based on search query and status
   const filteredAlerts = alerts.filter(alert => {
     const matchesSearch = 
-      alert.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      alert.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      alert.entity.toLowerCase().includes(searchQuery.toLowerCase());
+      (alert.title && alert.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (alert.description && alert.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (alert.entity && alert.entity.toLowerCase().includes(searchQuery.toLowerCase()));
       
     const matchesStatus = statusFilter === 'all' || 
       (statusFilter === 'open' && alert.status === 'Open') ||
-      (statusFilter === 'inProgress' && alert.status === 'In Progress') ||
-      (statusFilter === 'resolved' && alert.status === 'Resolved');
+      (statusFilter === 'inProgress' && alert.status === 'Follow-Up') ||
+      (statusFilter === 'resolved' && ['Service Estimate', 'Partial Quotation', 'Work-Order'].includes(alert.status));
       
     return matchesSearch && matchesStatus;
   });
   
   const formatDate = (dateString) => {
+    if (!dateString) return 'N/A';
     const date = new Date(dateString);
     return date.toLocaleDateString();
   };
@@ -109,12 +110,17 @@ const Alerts = ({ data }) => {
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {filteredAlerts.map(alert => (
                     <tr key={alert.id} className="hover:bg-gray-50">
-                      <td className="px-4 py-3 whitespace-nowrap text-sm font-medium">{alert.title}</td>
+                      <td className="px-4 py-3 whitespace-nowrap text-sm font-medium">
+                        <a href={`/alerts/${alert.id}`} className="text-blue-600 hover:underline">
+                          {alert.title}
+                        </a>
+                      </td>
                       <td className="px-4 py-3 text-sm">{alert.description}</td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm">{alert.entity}</td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm">{formatDate(alert.date)}</td>
@@ -130,11 +136,23 @@ const Alerts = ({ data }) => {
                       <td className="px-4 py-3 whitespace-nowrap text-sm">
                         <span className={`px-2 py-1 text-xs rounded-full ${
                           alert.status === 'Open' ? 'bg-red-100 text-red-800' : 
-                          alert.status === 'In Progress' ? 'bg-blue-100 text-blue-800' : 
-                          'bg-green-100 text-green-800'
+                          alert.status === 'Follow-Up' ? 'bg-blue-100 text-blue-800' : 
+                          alert.status === 'Service Estimate' ? 'bg-green-100 text-green-800' :
+                          alert.status === 'Work-Order' ? 'bg-purple-100 text-purple-800' :
+                          'bg-gray-100 text-gray-800'
                         }`}>
                           {alert.status}
                         </span>
+                      </td>
+                      <td className="px-4 py-3 whitespace-nowrap text-sm">
+                        {alert.status === 'Open' && (
+                          <button 
+                            className="text-blue-600 hover:text-blue-800 mr-2"
+                            onClick={() => window.location.href = `/create-estimate/${alert.id}`}
+                          >
+                            Create Estimate
+                          </button>
+                        )}
                       </td>
                     </tr>
                   ))}

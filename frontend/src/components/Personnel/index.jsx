@@ -39,7 +39,8 @@ const Personnel = ({ data }) => {
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Resident Status</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Visa Expiry</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Passport ID</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Passport Expiry</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Documents</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                   </tr>
@@ -54,10 +55,11 @@ const Personnel = ({ data }) => {
                       </td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm">{individual.type}</td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm">{individual.residentStatus}</td>
+                      <td className="px-4 py-3 whitespace-nowrap text-sm">{individual.passportId || 'N/A'}</td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm">
-                        {individual.visaExpiryDate ? (
+                        {individual.passportExpiryDate ? (
                           <span className={individual.expiryDays < 30 ? 'text-red-600' : 'text-gray-900'}>
-                            {new Date(individual.visaExpiryDate).toLocaleDateString()} 
+                            {new Date(individual.passportExpiryDate).toLocaleDateString()} 
                             {individual.expiryDays < 30 && ` (${individual.expiryDays} days)`}
                           </span>
                         ) : (
