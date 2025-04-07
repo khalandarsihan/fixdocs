@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:service_name",
+ "creation": "2024-11-09 16:20:08.350971",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_type",
+  "active",
+  "column_break_zfoc",
+  "legal_document",
+  "column_break_bfnm",
+  "service_name",
+  "document_type",
+  "section_break_zmrz",
+  "html_shae",
+  "service_tasks_and_charges_section",
+  "service_charge_item",
+  "section_break_jtyj",
+  "html_ffuk",
+  "service_tasks_section",
+  "service_task"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "label": "Service Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_zfoc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Service Type",
+   "options": "New Application\nRenewal\nCancellation"
+  },
+  {
+   "fieldname": "legal_document",
+   "fieldtype": "Link",
+   "label": "Legal Document",
+   "options": "Legal Document"
+  },
+  {
+   "fetch_from": "legal_document.document_type",
+   "fieldname": "document_type",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Document Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bfnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_tasks_and_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Service Charges"
+  },
+  {
+   "fieldname": "section_break_zmrz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_shae",
+   "fieldtype": "HTML",
+   "options": "<div style=\"margin-top: 50px;\"></div>\n"
+  },
+  {
+   "columns": 10,
+   "fieldname": "service_charge_item",
+   "fieldtype": "Table",
+   "options": "Service Charge Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_jtyj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_ffuk",
+   "fieldtype": "HTML",
+   "options": "<div style=\"margin-top: 50px;\"></div>"
+  },
+  {
+   "fieldname": "service_tasks_section",
+   "fieldtype": "Section Break",
+   "label": "Service Tasks"
+  },
+  {
+   "fieldname": "service_task",
+   "fieldtype": "Table",
+   "options": "Service Task",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-13 17:49:34.741668",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Template",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

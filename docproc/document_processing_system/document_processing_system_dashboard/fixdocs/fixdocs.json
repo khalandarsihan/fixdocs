@@ -1,0 +1,53 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Expiring Personnel Documents",
+   "width": "Half"
+  },
+  {
+   "chart": "Expiring Vehicle Documents",
+   "width": "Half"
+  },
+  {
+   "chart": "Expiring Business Documents",
+   "width": "Half"
+  },
+  {
+   "chart": "Service Estimate Tracker",
+   "width": "Half"
+  },
+  {
+   "chart": "Service Billing Performance",
+   "width": "Half"
+  },
+  {
+   "chart": "Service Type Revenue Analysis",
+   "width": "Half"
+  },
+  {
+   "chart": "Customer Segment Service Insights",
+   "width": "Half"
+  },
+  {
+   "chart": "Customer Segment Adoption Metrics",
+   "width": "Half"
+  },
+  {
+   "chart": "Service Estimate Revenue Forecast",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-01-14 18:29:51.354210",
+ "dashboard_name": "FixDocs",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-01-23 17:34:48.772331",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "FixDocs",
+ "owner": "Administrator"
+}

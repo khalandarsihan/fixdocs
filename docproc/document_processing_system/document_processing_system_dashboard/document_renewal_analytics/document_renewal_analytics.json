@@ -1,0 +1,33 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Alert Volume and Type Analysis",
+   "width": "Half"
+  },
+  {
+   "chart": "Document Expiry Timeline",
+   "width": "Half"
+  },
+  {
+   "chart": "Document Renewal Distribution",
+   "width": "Full"
+  },
+  {
+   "chart": "Alerts by Document Type",
+   "width": "Full"
+  }
+ ],
+ "creation": "2025-01-20 17:38:38.204230",
+ "dashboard_name": "Document Renewal Analytics",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-01-20 20:23:15.633424",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Document Renewal Analytics",
+ "owner": "Administrator"
+}

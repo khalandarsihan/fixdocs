@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:service_name",
+ "creation": "2024-07-29 15:35:07.428117",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_name",
+  "legal_document",
+  "column_break_npln",
+  "service_type",
+  "service_tasks_section",
+  "service_tasks",
+  "child_services_section",
+  "has_child_services",
+  "child_services"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "legal_document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Legal Document",
+   "options": "Legal Document",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_tasks_section",
+   "fieldtype": "Section Break",
+   "label": "Service Tasks"
+  },
+  {
+   "fieldname": "service_tasks",
+   "fieldtype": "Table",
+   "label": "Service Tasks",
+   "options": "Service Tasks"
+  },
+  {
+   "fieldname": "child_services_section",
+   "fieldtype": "Section Break",
+   "label": "Child Services"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_child_services",
+   "fieldtype": "Check",
+   "label": "Has Child Services"
+  },
+  {
+   "depends_on": "eval:doc.has_child_services",
+   "fieldname": "child_services",
+   "fieldtype": "Table",
+   "label": "Child Services",
+   "mandatory_depends_on": "eval:doc.has_child_services",
+   "options": "Child Services"
+  },
+  {
+   "fieldname": "column_break_npln",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Select",
+   "label": "Service Type",
+   "options": "\nNew Application\nRenewal\nCancellation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-01 19:59:17.678674",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

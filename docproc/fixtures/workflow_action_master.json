@@ -1,0 +1,86 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-01-03 17:53:11.339539",
+  "name": "Generate_Invoice",
+  "workflow_action_name": "Generate_Invoice"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-09 17:41:26.747530",
+  "name": "Reject",
+  "workflow_action_name": "Reject"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-14 13:46:45.998983",
+  "name": "Set as Lost",
+  "workflow_action_name": "Set as Lost"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-15 05:03:42.108356",
+  "name": "Bill",
+  "workflow_action_name": "Bill"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-14 22:35:46.017200",
+  "name": "Work",
+  "workflow_action_name": "Work"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-09 17:41:26.748485",
+  "name": "Review",
+  "workflow_action_name": "Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-13 17:16:53.996677",
+  "name": "Submit for Review",
+  "workflow_action_name": "Submit for Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-14 13:48:38.788658",
+  "name": "Cancel",
+  "workflow_action_name": "Cancel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-13 19:55:20.287251",
+  "name": "Complete",
+  "workflow_action_name": "Complete"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-11-09 17:41:26.746439",
+  "name": "Approve",
+  "workflow_action_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-01-03 05:36:59.443214",
+  "name": "Sales Invoice",
+  "workflow_action_name": "Sales Invoice"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-01-03 17:53:21.533513",
+  "name": "Generate Invoice",
+  "workflow_action_name": "Generate Invoice"
+ }
+]

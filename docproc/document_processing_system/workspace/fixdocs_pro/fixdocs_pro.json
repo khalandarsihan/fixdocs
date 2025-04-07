@@ -1,0 +1,121 @@
+{
+ "charts": [
+  {
+   "chart_name": "Expiring Business Documents",
+   "label": "Expiring Business Documents"
+  },
+  {
+   "chart_name": "Expiring Personnel Documents",
+   "label": "Expiring Personnel Documents"
+  }
+ ],
+ "content": "[{\"id\":\"2oZgdjpoX-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">FixDocs Pro</span>\",\"col\":12}},{\"id\":\"e9w_7TQqm0\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"uNIRjfrF27\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Businesses\",\"col\":3}},{\"id\":\"UGqk_M203P\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Personnel\",\"col\":3}},{\"id\":\"UiZlWUoWkt\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Vehicles\",\"col\":3}},{\"id\":\"cW_o1-3asO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Expiring Documents\",\"col\":3}},{\"id\":\"9y-Ow5Mkri\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Epa6es6z8u\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expiring Business Documents\",\"col\":6}},{\"id\":\"Ekb5sT_9GE\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expiring Personnel Documents\",\"col\":6}},{\"id\":\"lkhUS3rE97\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"U4QALBv07G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Business\",\"col\":4}},{\"id\":\"ZiQyozbwfh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Personnel\",\"col\":4}},{\"id\":\"ap5foSFyat\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicle\",\"col\":4}},{\"id\":\"iCuapbIdWj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"AAmb6OQOUV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Estimate\",\"col\":4}},{\"id\":\"ehNgwTwf1x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Alert\",\"col\":4}},{\"id\":\"CP21XfVfZt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Work\",\"col\":4}},{\"id\":\"rt0FxJEV4B\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"TPr7Zv3vMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboards\",\"col\":3}}]",
+ "creation": "2025-01-29 17:38:58.257616",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "solid-success",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "FixDocs Pro",
+ "links": [],
+ "modified": "2025-01-29 17:58:27.043254",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "FixDocs Pro",
+ "number_cards": [
+  {
+   "label": "Active Businesses",
+   "number_card_name": "Active Businesses"
+  },
+  {
+   "label": "Active Personnel",
+   "number_card_name": "Active Personnel"
+  },
+  {
+   "label": "Active Vehicles",
+   "number_card_name": "Active Vehicles"
+  },
+  {
+   "label": "Expiring Documents",
+   "number_card_name": "Expiring Documents"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "FixDocs Admin"
+  },
+  {
+   "role": "FixDocs User"
+  }
+ ],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Business",
+   "link_to": "Business",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dashboards",
+   "link_to": "FixDocs",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Personnel",
+   "link_to": "Personnel",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Service Estimate",
+   "link_to": "Service Estimate",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Alert",
+   "link_to": "Alert",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Vehicle",
+   "link_to": "Car and Carrier",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Work",
+   "link_to": "Work",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "FixDocs Pro"
+}

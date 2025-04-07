@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ACTION-.YYYY.-.#####",
+ "creation": "2024-12-09 12:30:11.543842",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_name",
+  "task_number",
+  "type",
+  "mode",
+  "column_break_ypes",
+  "status",
+  "customer_name_link",
+  "custom_customer_name",
+  "service_name",
+  "service_for_link",
+  "service_for"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task Name",
+   "reqd": 1
+  },
+  {
+   "default": "Office",
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "Field\nOffice"
+  },
+  {
+   "fieldname": "column_break_ypes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name_link",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Customer Name Link",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Business\",\"Personnel\"]]]",
+   "options": "DocType"
+  },
+  {
+   "bold": 1,
+   "fieldname": "task_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Task Number"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Action Type"
+  },
+  {
+   "fieldname": "service_for",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service For",
+   "options": "service_for_link",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_for_link",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Service for Link",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Personnel\",\"Business\",\"Car and Carrier\"]]]",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Work",
+   "options": "Work",
+   "read_only": 1
+  },
+  {
+   "fieldname": "custom_customer_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name",
+   "options": "customer_name_link",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nWorking\nComplete\nCancelled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-11 19:15:58.869687",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Action",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Open"
+  },
+  {
+   "color": "Yellow",
+   "title": "Working"
+  },
+  {
+   "color": "Green",
+   "title": "Complete"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
+ "title_field": "task_name"
+}

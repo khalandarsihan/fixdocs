@@ -1,0 +1,26 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-07-26 12:41:42.150846",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-26 12:41:42.150846",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Expiring Documents",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Alert",
+ "report_name": "Expiring Documents",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

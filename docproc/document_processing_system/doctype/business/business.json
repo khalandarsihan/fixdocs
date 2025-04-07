@@ -1,0 +1,497 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:company_name",
+ "creation": "2024-06-19 21:26:20.969350",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "company_name",
+  "company_location",
+  "company_emirates",
+  "company_legal_type",
+  "column_break_rkhf",
+  "issuing_authority",
+  "business_activities",
+  "active",
+  "legal_documents_tab",
+  "company_commercial_license_section",
+  "licence_number",
+  "commercial_licence_document",
+  "column_break_jcrr",
+  "licence_issue_date",
+  "certificate_chamber_of_commerce",
+  "column_break_exno",
+  "licence_expiry_date",
+  "company_memorandum_document",
+  "civil_defence_certificatematafi_certificate_section",
+  "certificate_id",
+  "column_break_dwgw",
+  "matafi_issue_date",
+  "column_break_pavi",
+  "matafi_expiry_date",
+  "labor_establishment_card_section",
+  "lec_number",
+  "column_break_ifwf",
+  "lec_issue_date",
+  "column_break_jupu",
+  "lec_expiry_date",
+  "immigration_establishment_card_section",
+  "iec_card_number",
+  "signatory_authority",
+  "column_break_ivga",
+  "iec_issue_date",
+  "iec_expiry_date",
+  "e_channel_section",
+  "e_channel_username",
+  "column_break_mcnz",
+  "e_channel_password",
+  "column_break_qvjv",
+  "e_channel_expiry_date",
+  "section_break_lcjh",
+  "business_documents",
+  "staff_tab",
+  "business_staff",
+  "partners_tab",
+  "business_partners_section",
+  "individual_partners",
+  "business_partners",
+  "vehicles_tab",
+  "business_vehicles",
+  "contacts_tab",
+  "business_contacts",
+  "website_users_tab",
+  "website_users_details",
+  "lease_details_tab",
+  "makani_number",
+  "tenancy_contract_expiry_date",
+  "tenancy_contract",
+  "building_mulkiya",
+  "building_sitemap",
+  "column_break_wcmr",
+  "tenancy_contract_building_name",
+  "tenancy_contract_building_type",
+  "tenancy_contract_building_address",
+  "bank_details_tab",
+  "bank_accounts_section",
+  "bank_accounts"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_rkhf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contacts_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contacts"
+  },
+  {
+   "fieldname": "legal_documents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Legal Documents"
+  },
+  {
+   "fieldname": "lease_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tenancy Contract"
+  },
+  {
+   "fieldname": "bank_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Accounts"
+  },
+  {
+   "fieldname": "website_users_tab",
+   "fieldtype": "Tab Break",
+   "label": "Passwords"
+  },
+  {
+   "fieldname": "website_users_details",
+   "fieldtype": "Table",
+   "label": "Website Users Details",
+   "options": "Business Website Users"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "company_emirates",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Company Emirates",
+   "options": "\nAbu Dhabi\nDubai\nSharjah\nAjman\nFujairah\nUmm Al Quwain\nRas Al Khaimah",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "company_location",
+   "fieldtype": "Data",
+   "label": "Company Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Link",
+   "label": "Issuing Authority",
+   "options": "Business Issuing Authority"
+  },
+  {
+   "fieldname": "company_legal_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company Legal Type",
+   "options": "Business Legal Type"
+  },
+  {
+   "fieldname": "makani_number",
+   "fieldtype": "Data",
+   "label": "Makani Number"
+  },
+  {
+   "fieldname": "business_activities",
+   "fieldtype": "Data",
+   "label": "Business Activities"
+  },
+  {
+   "fieldname": "company_commercial_license_section",
+   "fieldtype": "Section Break",
+   "label": "Company Commercial License"
+  },
+  {
+   "fieldname": "licence_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Licence Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_jcrr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_exno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_lcjh",
+   "fieldtype": "Section Break",
+   "label": "Other Legal Documents"
+  },
+  {
+   "fieldname": "certificate_chamber_of_commerce",
+   "fieldtype": "Attach",
+   "label": "Certificate Chamber of Commerce"
+  },
+  {
+   "fieldname": "civil_defence_certificatematafi_certificate_section",
+   "fieldtype": "Section Break",
+   "label": "Civil Defence Certificate(Matafi Certificate)"
+  },
+  {
+   "fieldname": "certificate_id",
+   "fieldtype": "Data",
+   "label": "Certificate ID"
+  },
+  {
+   "fieldname": "column_break_dwgw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "matafi_issue_date",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "column_break_pavi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "matafi_expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Matafi Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "immigration_establishment_card_section",
+   "fieldtype": "Section Break",
+   "label": "Immigration Establishment Card"
+  },
+  {
+   "fieldname": "iec_card_number",
+   "fieldtype": "Data",
+   "label": "Card Number"
+  },
+  {
+   "fieldname": "signatory_authority",
+   "fieldtype": "Link",
+   "label": "Signatory Authority",
+   "options": "Personnel"
+  },
+  {
+   "fieldname": "column_break_ivga",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "iec_issue_date",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "iec_expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Immigration Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "e_channel_section",
+   "fieldtype": "Section Break",
+   "label": "E Channel"
+  },
+  {
+   "fieldname": "e_channel_username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "fieldname": "column_break_mcnz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "e_channel_password",
+   "fieldtype": "Data",
+   "label": "Password"
+  },
+  {
+   "fieldname": "column_break_qvjv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "e_channel_expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "E Channel Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "labor_establishment_card_section",
+   "fieldtype": "Section Break",
+   "label": "Labor Establishment Card"
+  },
+  {
+   "fieldname": "lec_number",
+   "fieldtype": "Data",
+   "label": "Card Number"
+  },
+  {
+   "fieldname": "column_break_ifwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lec_issue_date",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "lec_expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Labor Expiry"
+  },
+  {
+   "fieldname": "column_break_wcmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commercial_licence_document",
+   "fieldtype": "Attach",
+   "label": "Commercial Licence Document"
+  },
+  {
+   "fieldname": "business_partners_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "business_partners",
+   "fieldtype": "Table",
+   "label": "Business Partners",
+   "options": "Business Partners"
+  },
+  {
+   "fieldname": "partners_tab",
+   "fieldtype": "Tab Break",
+   "label": "Partners"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "vehicles_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vehicles"
+  },
+  {
+   "fieldname": "business_vehicles",
+   "fieldtype": "Table",
+   "label": "Business Vehicles",
+   "options": "Vehicles"
+  },
+  {
+   "fieldname": "individual_partners",
+   "fieldtype": "Table",
+   "label": "Individual Partners",
+   "options": "Individual Partners"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "business_documents",
+   "fieldtype": "Table",
+   "label": "Business Documents",
+   "options": "Legal Documents"
+  },
+  {
+   "fieldname": "business_contacts",
+   "fieldtype": "Table",
+   "label": "Business Contacts",
+   "options": "Business Contacts"
+  },
+  {
+   "fieldname": "tenancy_contract_expiry_date",
+   "fieldtype": "Date",
+   "label": "Contract Expiry Date"
+  },
+  {
+   "fieldname": "building_mulkiya",
+   "fieldtype": "Attach",
+   "label": "Building Mulkiya"
+  },
+  {
+   "fieldname": "building_sitemap",
+   "fieldtype": "Attach",
+   "label": "Building Sitemap"
+  },
+  {
+   "fieldname": "tenancy_contract",
+   "fieldtype": "Attach",
+   "label": "Tenancy Contract"
+  },
+  {
+   "fieldname": "tenancy_contract_building_address",
+   "fieldtype": "Small Text",
+   "label": "Building Address"
+  },
+  {
+   "fieldname": "tenancy_contract_building_name",
+   "fieldtype": "Data",
+   "label": "Building Name"
+  },
+  {
+   "fieldname": "tenancy_contract_building_type",
+   "fieldtype": "Select",
+   "label": "Building Type",
+   "options": "\nFlat\nShed"
+  },
+  {
+   "fieldname": "company_memorandum_document",
+   "fieldtype": "Attach",
+   "label": "Company Memorandum Document"
+  },
+  {
+   "fieldname": "bank_accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Accounts"
+  },
+  {
+   "fieldname": "bank_accounts",
+   "fieldtype": "Table",
+   "label": "Bank Accounts",
+   "options": "Bank Accounts"
+  },
+  {
+   "fieldname": "staff_tab",
+   "fieldtype": "Tab Break",
+   "label": "Staff"
+  },
+  {
+   "fieldname": "business_staff",
+   "fieldtype": "Table",
+   "label": "Business Staff",
+   "options": "Business Staff"
+  },
+  {
+   "fieldname": "column_break_jupu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "licence_issue_date",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "licence_expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "License Expiry"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-13 08:51:09.762895",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Business",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Personnel",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "company_name",
+ "track_changes": 1
+}

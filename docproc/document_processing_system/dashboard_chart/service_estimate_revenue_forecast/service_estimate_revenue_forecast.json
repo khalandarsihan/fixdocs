@@ -1,0 +1,37 @@
+{
+ "chart_name": "Service Estimate Revenue Forecast",
+ "chart_type": "Report",
+ "creation": "2025-01-15 18:58:31.409770",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 1,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2025-01-15 19:10:24.368446",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Estimate Revenue Forecast",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Service Estimate Revenue Forecast",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "month",
+ "y_axis": [
+  {
+   "color": "#28a745",
+   "y_field": "historical_revenue"
+  },
+  {
+   "color": "#ffc107",
+   "y_field": "expected_revenue"
+  }
+ ]
+}

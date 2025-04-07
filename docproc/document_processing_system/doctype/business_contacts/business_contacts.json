@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-19 21:44:45.458415",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "full_name",
+  "email_address",
+  "phone",
+  "is_primary"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "default": "+971- ",
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_primary",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Primary"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email Address",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-12 16:08:23.251025",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Business Contacts",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

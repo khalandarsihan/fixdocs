@@ -1,0 +1,13 @@
+{
+ "creation": "2025-01-15 13:29:02.275202",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2025-01-15 13:29:02.275202",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Estimate to Invoice Analysis",
+ "owner": "Administrator",
+ "source_name": "Service Estimate to Invoice Analysis",
+ "timeseries": 0
+}

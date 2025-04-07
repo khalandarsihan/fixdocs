@@ -1,0 +1,13 @@
+{
+ "creation": "2025-01-17 05:51:25.869996",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2025-01-17 05:51:25.869996",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Work Status Duration",
+ "owner": "Administrator",
+ "source_name": "Work Status Duration",
+ "timeseries": 0
+}

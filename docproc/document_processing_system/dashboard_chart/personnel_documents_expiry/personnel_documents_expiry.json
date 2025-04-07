@@ -1,0 +1,31 @@
+{
+ "chart_name": "Personnel Documents Expiry",
+ "chart_type": "Custom",
+ "creation": "2024-07-15 12:36:30.277409",
+ "custom_options": "{\"colors\":[\"#ec5300\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "null",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2024-07-15 12:46:05.199274",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Personnel Documents Expiry",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "source": "Personnel Documents Expiry",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "y_axis": []
+}

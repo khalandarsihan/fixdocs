@@ -1,0 +1,45 @@
+{
+ "chart_name": "Work Status Trends Over Time",
+ "chart_type": "Report",
+ "creation": "2025-01-16 15:10:56.069250",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"from_date\":\"2024-10-17\",\"to_date\":\"2025-01-17\"}",
+ "group_by_type": "Count",
+ "idx": 11,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2025-01-17 08:17:02.577274",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Work Status Trends Over Time",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Work Status Trends Over Time",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Line",
+ "use_report_chart": 0,
+ "x_field": "period",
+ "y_axis": [
+  {
+   "color": "#4463F0",
+   "y_field": "Open"
+  },
+  {
+   "color": "#ECAD4B",
+   "y_field": "Working"
+  },
+  {
+   "color": "#29CD42",
+   "y_field": "Complete"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "Cancelled"
+  }
+ ]
+}

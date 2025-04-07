@@ -1,0 +1,270 @@
+{
+ "actions": [],
+ "autoname": "Alert-.#######",
+ "creation": "2024-07-11 03:19:46.764544",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "detail_section",
+  "alert_type",
+  "business",
+  "personnel",
+  "personnel_business_owner",
+  "personnel_primary_owner",
+  "vehicle",
+  "column_break_msgl",
+  "status",
+  "bill_to",
+  "vehicle_personnel_owner",
+  "vehicle_business_owner",
+  "section_break_iouu",
+  "document_type",
+  "date_of_issue",
+  "column_break_chxd",
+  "document_id",
+  "date_of_expiry",
+  "column_break_xmpf",
+  "linked_service_estimate",
+  "expires_in",
+  "expiring_documents_section",
+  "expiring_documents"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "alert_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Alert Type",
+   "no_copy": 1,
+   "options": "Business\nPersonnel\nVehicle",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_msgl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval: doc.alert_type == \"Business\" || doc.alert_type == \"Vehicle\"\n",
+   "fieldname": "business",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Business",
+   "options": "Business",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval: doc.alert_type == \"Personnel\" || doc.alert_type == \"Vehicle\"\n",
+   "fieldname": "personnel",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Personnel",
+   "options": "Personnel",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:doc.alert_type == \"Vehicle\"",
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Car and Carrier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "detail_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "expiring_documents_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Expiring Documents"
+  },
+  {
+   "fieldname": "expiring_documents",
+   "fieldtype": "Table",
+   "options": "Alert Documents"
+  },
+  {
+   "bold": 1,
+   "fieldname": "vehicle_business_owner",
+   "fieldtype": "Link",
+   "label": "Vehicle Owner",
+   "options": "Business",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "vehicle_personnel_owner",
+   "fieldtype": "Link",
+   "label": "Vehicle Owner",
+   "options": "Personnel",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval: (doc.alert_type == \"Personnel\" && doc.personnel_primary_owner == null) || (doc.alert_type == \"Vehicle\" && doc.personnel_primary_owner == null)\n",
+   "fieldname": "personnel_business_owner",
+   "fieldtype": "Link",
+   "label": "Bill To Business",
+   "options": "Business",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval: (doc.alert_type == \"Personnel\" && doc.personnel_business_owner == null) || (doc.alert_type == \"Vehicle\" && doc.personnel_business_owner == null)\n",
+   "fieldname": "personnel_primary_owner",
+   "fieldtype": "Link",
+   "label": "Bill To Personnel",
+   "options": "Personnel",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nOpen\nFollow-Up\nService Estimate\nPartial Quotation\nWork-Order\nCanceled",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "bill_to",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bill To",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "section_break_iouu",
+   "fieldtype": "Section Break",
+   "label": "Expiring Document"
+  },
+  {
+   "bold": 1,
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Document Type",
+   "options": "Legal Document",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_chxd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "document_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Document ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xmpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "linked_service_estimate",
+   "fieldtype": "Link",
+   "label": "Linked Service Estimate",
+   "options": "Service Estimate",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date of Issue",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "date_of_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date of Expiry",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "expires_in",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Expires In (Days)",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-08 21:33:02.452950",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Alert",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Open"
+  },
+  {
+   "color": "Orange",
+   "title": "Follow-Up"
+  },
+  {
+   "color": "Green",
+   "title": "Quotation"
+  },
+  {
+   "color": "Pink",
+   "title": "Work-Order"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  },
+  {
+   "color": "Green",
+   "title": "Service Estimate"
+  }
+ ]
+}

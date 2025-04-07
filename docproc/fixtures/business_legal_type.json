@@ -1,0 +1,30 @@
+[
+ {
+  "business_legal_type": "Service Agent",
+  "docstatus": 0,
+  "doctype": "Business Legal Type",
+  "modified": "2024-06-27 22:05:01.946004",
+  "name": "Service Agent"
+ },
+ {
+  "business_legal_type": "Sole Establishment",
+  "docstatus": 0,
+  "doctype": "Business Legal Type",
+  "modified": "2024-06-27 22:05:10.528835",
+  "name": "Sole Establishment"
+ },
+ {
+  "business_legal_type": "Sole Proprietorship",
+  "docstatus": 0,
+  "doctype": "Business Legal Type",
+  "modified": "2024-06-27 22:05:19.296638",
+  "name": "Sole Proprietorship"
+ },
+ {
+  "business_legal_type": "LLC",
+  "docstatus": 0,
+  "doctype": "Business Legal Type",
+  "modified": "2024-06-27 22:04:48.558347",
+  "name": "LLC"
+ }
+]

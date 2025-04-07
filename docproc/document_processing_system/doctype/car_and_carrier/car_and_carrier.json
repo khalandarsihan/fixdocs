@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:license_plate_number",
+ "creation": "2024-06-24 14:12:48.155733",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_ownership_section",
+  "owner_type",
+  "active",
+  "column_break_uvao",
+  "business_owner",
+  "personal_owner",
+  "vehicle_mulkiya_registration_card_section",
+  "mulkiya_number",
+  "license_plate_number",
+  "mulkiya_document",
+  "column_break_ubms",
+  "mulkiya_date_of_issue",
+  "mulkiya_date_of_expiry",
+  "vehicle_insurance_section",
+  "policy_number",
+  "insurance_document",
+  "column_break_mjby",
+  "policy_start_date",
+  "insurance_date_of_expiry",
+  "vehicle_documents_section",
+  "vehicle_details",
+  "column_break_pgwo",
+  "vehicle_test_results"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_mulkiya_registration_card_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Mulkiya (Registration Card)"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "mulkiya_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mulkiya Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ubms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "mulkiya_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Mulkiya Date of Issue",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Documents"
+  },
+  {
+   "fieldname": "vehicle_details",
+   "fieldtype": "Attach",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "column_break_pgwo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_test_results",
+   "fieldtype": "Attach",
+   "label": "Vehicle Test Results"
+  },
+  {
+   "fieldname": "vehicle_ownership_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Ownership"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "owner_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Owner Type",
+   "options": "\nBusiness\nPersonnel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uvao",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.owner_type == \"Business\";",
+   "fieldname": "business_owner",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Business Owner",
+   "mandatory_depends_on": "eval:doc.owner_type == \"Business\";",
+   "options": "Business"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.owner_type == \"Personnel\";",
+   "fieldname": "personal_owner",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Personal Owner",
+   "mandatory_depends_on": "eval:doc.owner_type == \"Personnel\";",
+   "options": "Personnel"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "mulkiya_date_of_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Mulkiya Date of Expiry",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mulkiya_document",
+   "fieldtype": "Attach",
+   "label": "Mulkiya Document"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "vehicle_insurance_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Insurance"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy Number"
+  },
+  {
+   "fieldname": "column_break_mjby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_start_date",
+   "fieldtype": "Date",
+   "label": "Policy Start Date"
+  },
+  {
+   "fieldname": "insurance_document",
+   "fieldtype": "Attach",
+   "label": "Insurance Document"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "license_plate_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "License Plate Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "insurance_date_of_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Policy End Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-13 14:21:50.514804",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Car and Carrier",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "license_plate_number",
+ "track_changes": 1
+}

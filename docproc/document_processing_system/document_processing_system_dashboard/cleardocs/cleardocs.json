@@ -1,0 +1,35 @@
+{
+ "cards": [
+  {
+   "card": "Active Businesses"
+  },
+  {
+   "card": "Active Personnel"
+  },
+  {
+   "card": "Active Vehicles"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Document Expiry",
+   "width": "Half"
+  },
+  {
+   "chart": "Personnel Documents Expiry",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-07-03 11:37:07.283257",
+ "dashboard_name": "ClearDocs",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2024-07-15 12:46:50.391614",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "ClearDocs",
+ "owner": "Administrator"
+}

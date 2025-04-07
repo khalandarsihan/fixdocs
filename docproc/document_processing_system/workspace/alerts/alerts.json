@@ -1,0 +1,73 @@
+{
+ "charts": [
+  {
+   "chart_name": "Document Expiry Timeline",
+   "label": "Document Expiry Timeline"
+  },
+  {
+   "chart_name": "Alert Volume and Type Analysis",
+   "label": "Alert Volume and Type Analysis"
+  },
+  {
+   "chart_name": "Document Renewal Distribution",
+   "label": "Document Renewal Distribution"
+  },
+  {
+   "chart_name": "Alerts by Document Type",
+   "label": "Alerts by Document Type"
+  }
+ ],
+ "content": "[{\"id\":\"oARFHf3W4h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Alerts</span>\",\"col\":12}},{\"id\":\"zw_x_IDBMk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Alert\",\"col\":3}},{\"id\":\"CRjglrXlh3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Business Alert\",\"col\":3}},{\"id\":\"5mjTGa8fjv\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Personnel Alert\",\"col\":3}},{\"id\":\"TdBhdbdaWM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Vehicle Alert\",\"col\":3}},{\"id\":\"N2BVn-mOD6\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bTofpaZH1H\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Document Expiry Timeline\",\"col\":6}},{\"id\":\"8j6ICqqk_f\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Alert Volume and Type Analysis\",\"col\":6}},{\"id\":\"O6wbZVtuw8\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"NWfimzZRXy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Document Renewal Distribution\",\"col\":12}},{\"id\":\"YYoAmqohVl\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"iSyslI5UGp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Alerts by Document Type\",\"col\":12}}]",
+ "creation": "2025-01-28 07:36:14.362342",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "solid-warning",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Alerts",
+ "links": [],
+ "modified": "2025-01-28 16:55:55.655022",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Alerts",
+ "number_cards": [
+  {
+   "label": "Open Alert",
+   "number_card_name": "Open Alert"
+  },
+  {
+   "label": "Business Alert",
+   "number_card_name": "Business Alert"
+  },
+  {
+   "label": "Personnel Alert",
+   "number_card_name": "Personnel Alert"
+  },
+  {
+   "label": "Vehicle Alert",
+   "number_card_name": "Vehicle Alert"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "FixDocs Admin"
+  },
+  {
+   "role": "FixDocs User"
+  }
+ ],
+ "sequence_id": 5.0,
+ "shortcuts": [],
+ "title": "Alerts"
+}

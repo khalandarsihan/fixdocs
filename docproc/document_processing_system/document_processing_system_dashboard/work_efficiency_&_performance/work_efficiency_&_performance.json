@@ -1,0 +1,53 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Work Creation vs Completion Trends",
+   "width": "Half"
+  },
+  {
+   "chart": "Average Time in Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Work Status Trends Over Time",
+   "width": "Full"
+  },
+  {
+   "chart": "Work Status Overview",
+   "width": "Half"
+  },
+  {
+   "chart": "Work Aging Analysis",
+   "width": "Half"
+  },
+  {
+   "chart": "Work Progress Distribution",
+   "width": "Half"
+  },
+  {
+   "chart": "Service Type Revenue Analysis",
+   "width": "Half"
+  },
+  {
+   "chart": "Average Work Completion Time",
+   "width": "Full"
+  },
+  {
+   "chart": "Most Common Service Types",
+   "width": "Full"
+  }
+ ],
+ "creation": "2025-01-16 15:12:46.306236",
+ "dashboard_name": "Work Efficiency & Performance",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 3,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-02-04 16:55:19.599376",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Work Efficiency & Performance",
+ "owner": "Administrator"
+}

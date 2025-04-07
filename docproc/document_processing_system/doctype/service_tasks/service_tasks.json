@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-29 15:56:39.801089",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_task",
+  "billable",
+  "linked_item",
+  "column_break_flau",
+  "government_billable",
+  "government_linked_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_task",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Task",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "service_task.billable",
+   "fieldname": "billable",
+   "fieldtype": "Check",
+   "label": "Billable"
+  },
+  {
+   "depends_on": "eval:doc.billable",
+   "fetch_from": "service_task.linked_item",
+   "fieldname": "linked_item",
+   "fieldtype": "Link",
+   "label": "Linked Item",
+   "options": "Item"
+  },
+  {
+   "default": "0",
+   "fetch_from": "service_task.gov_billable",
+   "fieldname": "government_billable",
+   "fieldtype": "Check",
+   "label": "Government Billable"
+  },
+  {
+   "depends_on": "eval:doc.government_billable",
+   "fetch_from": "service_task.gov_linked_item",
+   "fieldname": "government_linked_item",
+   "fieldtype": "Link",
+   "label": "Government Linked Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_flau",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-01 20:00:43.092465",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Tasks",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

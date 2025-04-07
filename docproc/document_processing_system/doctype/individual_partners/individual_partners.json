@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-25 06:55:55.401445",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "individual_partner",
+  "is_director",
+  "is_service_agent",
+  "share_percentage"
+ ],
+ "fields": [
+  {
+   "fieldname": "individual_partner",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Individual Partner",
+   "options": "Personnel",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_director",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Director"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_service_agent",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Service Agent"
+  },
+  {
+   "default": "100",
+   "fieldname": "share_percentage",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Share Percentage"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-10 22:34:50.648024",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Individual Partners",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

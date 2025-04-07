@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:document_name",
+ "creation": "2024-06-19 22:18:02.229746",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "system",
+  "column_break_vvyf",
+  "document_name",
+  "alert_period",
+  "additional_alert_period",
+  "section_break_jccg",
+  "document_id",
+  "column_break_qdct",
+  "date_of_issue",
+  "column_break_howy",
+  "date_of_expiry"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "\nBusiness Document\nIndividual Document\nVehicle Document",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "date_of_expiry",
+   "fieldtype": "Check",
+   "label": "Date of Expiry"
+  },
+  {
+   "default": "0",
+   "fieldname": "document_id",
+   "fieldtype": "Check",
+   "label": "Document ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "date_of_issue",
+   "fieldtype": "Check",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "column_break_vvyf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jccg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qdct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_howy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "system",
+   "fieldtype": "Check",
+   "label": "System",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Generate Alerts for Documents Expiring in how many Days?",
+   "fieldname": "alert_period",
+   "fieldtype": "Data",
+   "label": "Default Alert Period"
+  },
+  {
+   "default": "0",
+   "fieldname": "additional_alert_period",
+   "fieldtype": "Data",
+   "label": "Additional Alert Period"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-09 17:53:49.603332",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Legal Document",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "document_name"
+}

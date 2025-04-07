@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:issuing_authority",
+ "creation": "2024-06-24 13:03:00.723531",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "issuing_authority"
+ ],
+ "fields": [
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Issuing Authority",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-25 05:24:06.092385",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Business Issuing Authority",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "issuing_authority"
+}

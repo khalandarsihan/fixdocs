@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-24 15:52:42.897788",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "alert_settings_section",
+  "alert_period",
+  "column_break_btfc",
+  "additional_alert_period"
+ ],
+ "fields": [
+  {
+   "fieldname": "alert_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Alert Settings"
+  },
+  {
+   "default": "30",
+   "description": "Generate Alerts for Documents Expiring in how many Days?",
+   "fieldname": "alert_period",
+   "fieldtype": "Data",
+   "label": "Default Alert Period"
+  },
+  {
+   "default": "30",
+   "fieldname": "additional_alert_period",
+   "fieldtype": "Data",
+   "label": "Additional Alert Period"
+  },
+  {
+   "fieldname": "column_break_btfc",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-01-09 18:36:42.307175",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "ClearDocs Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

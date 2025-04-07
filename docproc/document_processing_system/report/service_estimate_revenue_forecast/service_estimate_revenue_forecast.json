@@ -1,0 +1,31 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-01-15 18:39:09.211548",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-01-15 18:56:19.338293",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Estimate Revenue Forecast",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "def execute(filters=None):\n    columns = [\n        {\n            \"fieldname\": \"month\",\n            \"label\": _(\"Month\"),\n            \"fieldtype\": \"Data\",\n            \"width\": 120\n        },\n        {\n            \"fieldname\": \"expected_revenue\",\n            \"label\": _(\"Expected Revenue\"),\n            \"fieldtype\": \"Currency\",\n            \"width\": 150\n        },\n        {\n            \"fieldname\": \"historical_revenue\",\n            \"label\": _(\"Historical Revenue\"),\n            \"fieldtype\": \"Currency\",\n            \"width\": 150\n        }\n    ]\n\n    data = frappe.db.sql(\"\"\"\n        SELECT \n            DATE_FORMAT(date, '%Y-%m') as month,\n            SUM(IF(status = 'Open' AND service_name IS NOT NULL, grand_total, 0)) as expected_revenue,\n            SUM(IF(status = 'Complete' AND service_name IS NOT NULL, grand_total, 0)) as historical_revenue\n        FROM \n            `tabService Estimate`\n        WHERE \n            status IN ('Open', 'Complete')\n            AND service_name IS NOT NULL\n        GROUP BY \n            DATE_FORMAT(date, '%Y-%m')\n        ORDER BY\n            month DESC\n    \"\"\", as_dict=1)\n\n    chart = {\n        \"type\": \"bar\",\n        \"data\": {\n            \"labels\": [row.month for row in data],\n            \"datasets\": [\n                {\n                    \"name\": \"Expected Revenue\",\n                    \"values\": [row.expected_revenue for row in data]\n                },\n                {\n                    \"name\": \"Historical Revenue\",\n                    \"values\": [row.historical_revenue for row in data]\n                }\n            ]\n        }\n    }\n\n    return columns, data, None, chart",
+ "ref_doctype": "Service Estimate",
+ "report_name": "Service Estimate Revenue Forecast",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "FixDocs Admin"
+  },
+  {
+   "role": "FixDocs User"
+  }
+ ],
+ "timeout": 0
+}

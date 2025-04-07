@@ -1,0 +1,13 @@
+{
+ "creation": "2024-07-03 14:54:52.440922",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2024-07-03 14:54:52.440922",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Business Timeline Expiry",
+ "owner": "Administrator",
+ "source_name": "Business Timeline Expiry",
+ "timeseries": 0
+}

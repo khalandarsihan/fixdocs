@@ -1,0 +1,13 @@
+{
+ "creation": "2024-07-03 11:18:44.308252",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2024-07-03 11:18:52.136960",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Business Document Expiry",
+ "owner": "Administrator",
+ "source_name": "Business Document Expiry",
+ "timeseries": 1
+}

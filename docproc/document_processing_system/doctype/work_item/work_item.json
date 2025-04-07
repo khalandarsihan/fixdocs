@@ -1,0 +1,29 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-26 16:13:06.585506",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ltup"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ltup",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-26 16:13:06.585506",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Work Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

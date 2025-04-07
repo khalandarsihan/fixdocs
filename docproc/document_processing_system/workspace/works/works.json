@@ -1,0 +1,81 @@
+{
+ "charts": [
+  {
+   "chart_name": "Work Creation vs Completion Trends",
+   "label": "Work Creation vs Completion Trends"
+  },
+  {
+   "chart_name": "Work Aging Analysis",
+   "label": "Work Aging Analysis"
+  }
+ ],
+ "content": "[{\"id\":\"BRIUZPlDzs\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Works</span>\",\"col\":12}},{\"id\":\"t5eqd5kuB0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Work\",\"col\":3}},{\"id\":\"STtkMt-WV7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"In Progress\",\"col\":3}},{\"id\":\"r_97FM3tD7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Complete\",\"col\":3}},{\"id\":\"6n-ylqEoLL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Cancelled\",\"col\":3}},{\"id\":\"hY1qsPCyon\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"CuIiz64Me8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Work Creation vs Completion Trends\",\"col\":6}},{\"id\":\"Tvmd9w2MmT\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Work Aging Analysis\",\"col\":6}},{\"id\":\"tkv12W4Lft\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"zcoZmzvM-3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Work\",\"col\":3}},{\"id\":\"eQocW-8lvK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboards\",\"col\":3}}]",
+ "creation": "2025-01-28 07:33:06.323012",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-energy-points",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Works",
+ "links": [],
+ "modified": "2025-01-29 17:36:34.222761",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Works",
+ "number_cards": [
+  {
+   "label": "New Work",
+   "number_card_name": "New Work"
+  },
+  {
+   "label": "In Progress",
+   "number_card_name": "In Progress"
+  },
+  {
+   "label": "Complete",
+   "number_card_name": "Complete"
+  },
+  {
+   "label": "Cancelled",
+   "number_card_name": "Cancelled"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "FixDocs Admin"
+  },
+  {
+   "role": "FixDocs User"
+  }
+ ],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dashboards",
+   "link_to": "Work Efficiency & Performance",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Work",
+   "link_to": "Work",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Works"
+}

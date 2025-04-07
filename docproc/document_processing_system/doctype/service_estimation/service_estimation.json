@@ -1,0 +1,300 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EST-SRV-{######}",
+ "creation": "2025-01-01 13:02:33.629303",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_kzwt",
+  "quotation_to",
+  "column_break_lnlg",
+  "business_name",
+  "personnel_name",
+  "section_break_typy",
+  "service_type",
+  "column_break_tduw",
+  "service_name",
+  "column_break_poiv",
+  "service_for_business",
+  "service_for_person",
+  "service_for_vehicle",
+  "section_break_rgfm",
+  "document_type",
+  "column_break_vnda",
+  "service_for_link",
+  "column_break_ppmm",
+  "linked_sales_invoice",
+  "column_break_hech",
+  "linked_work",
+  "section_break_zrqm",
+  "quotation_services",
+  "section_break_cjio",
+  "items",
+  "section_break_ljto",
+  "taxes_and_charges",
+  "payment_due_days",
+  "sales_taxes_and_charges",
+  "section_break_ihst",
+  "total",
+  "total_taxes_and_charges",
+  "column_break_oazf",
+  "grand_total",
+  "in_words",
+  "section_break_1n4t",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1n4t",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Service Estimation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "quotation_to",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Estimation To",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Business\",\"Personnel\"]]]",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lnlg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.quotation_to == 'Business';",
+   "fieldname": "business_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Business Name",
+   "link_filters": "[[\"Business\",\"active\",\"=\",1]]",
+   "options": "Business"
+  },
+  {
+   "depends_on": "eval:doc.quotation_to == 'Personnel';",
+   "fieldname": "personnel_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Personnel Name",
+   "link_filters": "[[\"Personnel\",\"active\",\"=\",1],[\"Personnel\",\"is_customer\",\"=\",1]]",
+   "options": "Personnel"
+  },
+  {
+   "fieldname": "section_break_typy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Select",
+   "label": "Service Type",
+   "options": "\nNew Application\nRenewal\nCancellation"
+  },
+  {
+   "fieldname": "column_break_tduw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Link",
+   "label": "Service Name",
+   "options": "Service Template"
+  },
+  {
+   "fieldname": "section_break_rgfm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "service_name.document_type",
+   "fieldname": "document_type",
+   "fieldtype": "Data",
+   "label": "Document Type"
+  },
+  {
+   "fieldname": "column_break_vnda",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_for_link",
+   "fieldtype": "Link",
+   "label": "Service For Link",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Business\",\"Personnel\",\"Car and Carrier\"]]]",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_ppmm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_poiv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kzwt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.service_for_link == 'Business';",
+   "fieldname": "service_for_business",
+   "fieldtype": "Link",
+   "label": "Service for Business",
+   "link_filters": "[[\"Business\",\"company_name\",\"=\",\"eval:doc.business_name\"]]",
+   "options": "Business"
+  },
+  {
+   "depends_on": "eval:doc.service_for_link == 'Personnel';",
+   "fieldname": "service_for_person",
+   "fieldtype": "Link",
+   "label": "Service for Person",
+   "options": "Personnel"
+  },
+  {
+   "depends_on": "eval:doc.service_for_link == 'Car and Carrier';",
+   "fieldname": "service_for_vehicle",
+   "fieldtype": "Link",
+   "label": "Service for Vehicle",
+   "options": "Car and Carrier"
+  },
+  {
+   "fieldname": "section_break_zrqm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "quotation_services",
+   "fieldtype": "Table",
+   "label": "Services",
+   "options": "Quotation Services",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_cjio",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Sales Invoice Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ljto",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_taxes_and_charges",
+   "fieldtype": "Table",
+   "label": "Sales Taxes and Charges",
+   "options": "Sales Taxes and Charges"
+  },
+  {
+   "fieldname": "taxes_and_charges",
+   "fieldtype": "Link",
+   "label": "Sales Taxes and Charges Template",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "fieldname": "section_break_ihst",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Total Taxes and Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_oazf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "in_words",
+   "fieldtype": "Data",
+   "label": "In Words",
+   "length": 240,
+   "read_only": 1
+  },
+  {
+   "fieldname": "linked_sales_invoice",
+   "fieldtype": "Link",
+   "label": "Linked Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "column_break_hech",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linked_work",
+   "fieldtype": "Link",
+   "label": "Linked Work",
+   "options": "Work"
+  },
+  {
+   "default": "30",
+   "fieldname": "payment_due_days",
+   "fieldtype": "Data",
+   "label": "Payment Due Days"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-06 17:48:34.536629",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Estimation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

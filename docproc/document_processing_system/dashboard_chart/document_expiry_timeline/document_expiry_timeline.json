@@ -1,0 +1,46 @@
+{
+ "chart_name": "Document Expiry Timeline",
+ "chart_type": "Report",
+ "creation": "2025-01-20 18:57:06.788263",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"company\":\"Meme Typing\"}",
+ "group_by_type": "Count",
+ "idx": 15,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2025-01-27 16:14:16.450956",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Document Expiry Timeline",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Document Expiry Timeline",
+ "roles": [
+  {
+   "role": "FixDocs Admin"
+  },
+  {
+   "role": "FixDocs User"
+  },
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 1,
+ "x_field": "",
+ "y_axis": [
+  {
+   "color": "#4463F0",
+   "y_field": "document_count"
+  }
+ ]
+}

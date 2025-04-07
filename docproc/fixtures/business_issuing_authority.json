@@ -1,0 +1,51 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Dubai DED",
+  "modified": "2024-06-27 22:30:22.642542",
+  "name": "Dubai DED"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Ajman DED",
+  "modified": "2024-06-27 22:31:09.770933",
+  "name": "Ajman DED"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Sharjah Shams Free Zone",
+  "modified": "2024-06-27 22:31:38.210819",
+  "name": "Sharjah Shams Free Zone"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Dubai South Free Zone",
+  "modified": "2024-06-27 22:31:47.780875",
+  "name": "Dubai South Free Zone"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Ajman MCF",
+  "modified": "2024-06-27 22:31:19.221356",
+  "name": "Ajman MCF"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Sharjah DED",
+  "modified": "2024-06-27 22:30:57.928718",
+  "name": "Sharjah DED"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Business Issuing Authority",
+  "issuing_authority": "Ajman Free Zone",
+  "modified": "2024-06-27 22:31:27.689465",
+  "name": "Ajman Free Zone"
+ }
+]

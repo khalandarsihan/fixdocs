@@ -1,0 +1,98 @@
+{
+ "charts": [
+  {
+   "chart_name": "Service Type Distribution",
+   "label": "Service Type Distribution"
+  },
+  {
+   "chart_name": "Weekly Estimate Trends",
+   "label": "Weekly Estimate Trends"
+  }
+ ],
+ "content": "[{\"id\":\"l2dpEO6UkS\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Estimate</span>\",\"col\":12}},{\"id\":\"YZRWA6YOtf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LUhOn2JEU9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Request\",\"col\":3}},{\"id\":\"F7omcl18sj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Work & Bill Pending\",\"col\":3}},{\"id\":\"a6_i2EVeIC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Work Pending\",\"col\":3}},{\"id\":\"MhoS7m0r3V\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Billing Pending\",\"col\":3}},{\"id\":\"sgzFSnY-bL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"xgjvhy5Zvt\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Service Type Distribution\",\"col\":6}},{\"id\":\"S6MHCsB3Nm\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Weekly Estimate Trends\",\"col\":6}},{\"id\":\"kBWabH9bRW\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"TJasVGsrgs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Estimate\",\"col\":3}},{\"id\":\"-Hs7B6Burz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Items\",\"col\":3}},{\"id\":\"5SwoNYlOsV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"AjsCOI8NBr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboards\",\"col\":3}}]",
+ "creation": "2025-01-29 17:38:58.347516",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-monthly-rank",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Estimate",
+ "links": [],
+ "modified": "2025-01-29 17:59:27.721372",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Estimate",
+ "number_cards": [
+  {
+   "label": "New Request",
+   "number_card_name": "New Request"
+  },
+  {
+   "label": "Work & Bill Pending",
+   "number_card_name": "Work & Bill Pending"
+  },
+  {
+   "label": "Work Pending",
+   "number_card_name": "Work Pending"
+  },
+  {
+   "label": "Billing Pending",
+   "number_card_name": "Billing Pending"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "FixDocs Admin"
+  },
+  {
+   "role": "FixDocs User"
+  }
+ ],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Service Estimate",
+   "link_to": "Service Estimate",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "Dashboard",
+   "label": "Dashboards",
+   "link_to": "Service Estimate",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Items",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Sales Invoice",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Estimate"
+}

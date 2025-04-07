@@ -1,0 +1,37 @@
+{
+ "chart_name": "Work Aging Analysis",
+ "chart_type": "Report",
+ "creation": "2025-01-17 09:57:54.181767",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"from_date\":\"2024-10-17\",\"to_date\":\"2025-01-17\"}",
+ "group_by_type": "Count",
+ "idx": 8,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2025-01-17 18:27:42.679935",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Work Aging Analysis",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Work Aging Analysis",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 1,
+ "x_field": "aging_bucket",
+ "y_axis": [
+  {
+   "color": "#ff69b4",
+   "y_field": "work_count"
+  },
+  {
+   "color": "#0004f6",
+   "y_field": "total_progress"
+  }
+ ]
+}

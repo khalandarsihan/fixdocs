@@ -1,0 +1,492 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:full_name",
+ "creation": "2024-06-28 00:22:05.116216",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "full_name",
+  "resident_status",
+  "visa_type",
+  "column_break_ppwq",
+  "personnel_type",
+  "primary_personnel",
+  "business",
+  "active",
+  "is_customer",
+  "contact_details_section",
+  "email_address",
+  "column_break_ukrz",
+  "phone_number",
+  "personnel_documents_tab",
+  "passport_section",
+  "passport_id",
+  "passport_document",
+  "column_break_ythl",
+  "passport_date_of_issue",
+  "column_break_ydba",
+  "passport_date_of_expiry",
+  "visa_details_section",
+  "visa_id",
+  "visa_document",
+  "column_break_wkqu",
+  "visa_date_of_issue",
+  "column_break_bbby",
+  "visa_date_of_expiry",
+  "emirates_card_section",
+  "emirates_card_id",
+  "attach_emirates_card",
+  "column_break_hugp",
+  "emirates_card_date_of_issue",
+  "column_break_qojk",
+  "emirates_card_date_of_expiry",
+  "work_permit_section",
+  "labor_card_id",
+  "attach_labor_card",
+  "column_break_knak",
+  "labor_card_date_of_issue",
+  "column_break_ulqb",
+  "labor_card_date_of_expiry",
+  "health_insurance_section",
+  "health_insurance_card_id",
+  "attach_health_insurance_card",
+  "column_break_wgnq",
+  "health_insurance_date_of_issue",
+  "column_break_mtnq",
+  "health_insurance_date_of_expiry",
+  "iloea_section",
+  "iloea",
+  "column_break_foqd",
+  "iloea_date_of_expiry",
+  "driving_licence_section",
+  "driving_licence_id",
+  "attach_driving_licence",
+  "column_break_obyy",
+  "driving_licence_date_of_issue",
+  "column_break_rtjx",
+  "driving_licence_date_of_expiry",
+  "other_personnel_documents_section",
+  "additional_personnel_documents",
+  "personnel_vehicles_tab",
+  "personnel_vehicles_section",
+  "personnel_vehicles",
+  "personnel_dependents_tab",
+  "personnel_dependents_section",
+  "personnel_dependents"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_ppwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "personnel_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "\nIndividual\nBusiness Staff\nDependent",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.personnel_type == \"Dependent\"",
+   "fieldname": "primary_personnel",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Primary Personnel",
+   "mandatory_depends_on": "eval:doc.personnel_type == \"Dependent\"",
+   "options": "Personnel"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.personnel_type == \"Business Staff\"",
+   "fieldname": "business",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Business",
+   "mandatory_depends_on": "eval:doc.personnel_type == \"Business Staff\"",
+   "options": "Business"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ukrz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "+971- ",
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "personnel_documents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personnel Documents"
+  },
+  {
+   "fieldname": "passport_section",
+   "fieldtype": "Section Break",
+   "label": "Passport"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "passport_id",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Passport ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ythl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "passport_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Passport Date of Issue"
+  },
+  {
+   "fieldname": "column_break_ydba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "passport_date_of_expiry",
+   "fieldtype": "Date",
+   "label": "Passport Expiry"
+  },
+  {
+   "fieldname": "passport_document",
+   "fieldtype": "Attach",
+   "label": "Passport Document"
+  },
+  {
+   "depends_on": "eval:doc.resident_status == \"Visitor\" || doc.resident_status == \"Resident\"",
+   "fieldname": "visa_details_section",
+   "fieldtype": "Section Break",
+   "label": "VISA Details",
+   "mandatory_depends_on": "eval:doc.visa_type == \"Visitor\" || doc.visa_type == \"Resident\""
+  },
+  {
+   "fieldname": "visa_id",
+   "fieldtype": "Data",
+   "label": "VISA ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_wkqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visa_date_of_issue",
+   "fieldtype": "Date",
+   "label": "VISA Date of Issue"
+  },
+  {
+   "fieldname": "column_break_bbby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visa_date_of_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "VISA Expiry"
+  },
+  {
+   "fieldname": "visa_document",
+   "fieldtype": "Attach",
+   "label": "VISA Document"
+  },
+  {
+   "depends_on": "eval:doc.resident_status == \"Emirati\" || doc.resident_status == \"Resident\"",
+   "fieldname": "emirates_card_section",
+   "fieldtype": "Section Break",
+   "label": "Emirates Card",
+   "mandatory_depends_on": "eval:doc.visa_type == \"Emirati\" || doc.visa_type == \"Resident\""
+  },
+  {
+   "fieldname": "emirates_card_id",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Emirates Card ID"
+  },
+  {
+   "fieldname": "column_break_hugp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "emirates_card_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Emirates Card Date of Issue"
+  },
+  {
+   "fieldname": "column_break_qojk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "emirates_card_date_of_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Emirates ID Expiry"
+  },
+  {
+   "fieldname": "work_permit_section",
+   "fieldtype": "Section Break",
+   "label": "Work Permit (Labor Card)"
+  },
+  {
+   "fieldname": "labor_card_id",
+   "fieldtype": "Data",
+   "label": "Labor Card ID"
+  },
+  {
+   "fieldname": "column_break_knak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ulqb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "labor_card_date_of_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Labor Card Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "health_insurance_section",
+   "fieldtype": "Section Break",
+   "label": "Health Insurance "
+  },
+  {
+   "fieldname": "health_insurance_card_id",
+   "fieldtype": "Data",
+   "label": "Health Insurance Card ID"
+  },
+  {
+   "fieldname": "attach_health_insurance_card",
+   "fieldtype": "Attach",
+   "label": "Health Insurance Card"
+  },
+  {
+   "fieldname": "column_break_wgnq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "health_insurance_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Health Insurance Date of Issue"
+  },
+  {
+   "fieldname": "column_break_mtnq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "health_insurance_date_of_expiry",
+   "fieldtype": "Date",
+   "label": "Health Insurance Date of Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "iloea_section",
+   "fieldtype": "Section Break",
+   "label": "ILOE (Involuntary Loss Of Employment)"
+  },
+  {
+   "fieldname": "iloea_date_of_expiry",
+   "fieldtype": "Date",
+   "label": "ILOE Date of Expiry"
+  },
+  {
+   "fieldname": "attach_emirates_card",
+   "fieldtype": "Attach",
+   "label": "Emirates Card"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "driving_licence_section",
+   "fieldtype": "Section Break",
+   "label": "Driving Licence"
+  },
+  {
+   "fieldname": "driving_licence_id",
+   "fieldtype": "Data",
+   "label": "Driving Licence ID"
+  },
+  {
+   "fieldname": "attach_driving_licence",
+   "fieldtype": "Attach",
+   "label": "Driving Licence"
+  },
+  {
+   "fieldname": "column_break_obyy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driving_licence_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Driving Licence Date of Issue"
+  },
+  {
+   "fieldname": "column_break_rtjx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driving_licence_date_of_expiry",
+   "fieldtype": "Date",
+   "label": "Driving Licence Date of Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "other_personnel_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Other Personnel Documents"
+  },
+  {
+   "fieldname": "personnel_vehicles_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personnel Vehicles"
+  },
+  {
+   "fieldname": "personnel_vehicles_section",
+   "fieldtype": "Section Break",
+   "label": "Personnel Vehicles"
+  },
+  {
+   "fieldname": "personnel_vehicles",
+   "fieldtype": "Table",
+   "label": "Personnel Vehicles",
+   "options": "Vehicles"
+  },
+  {
+   "fieldname": "resident_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Resident Status",
+   "options": "\nVisitor\nResident\nEmirati"
+  },
+  {
+   "depends_on": "eval:doc.resident_status == \"Visitor\" || doc.resident_status == \"Resident\";",
+   "fieldname": "visa_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "VISA Type",
+   "mandatory_depends_on": "eval:doc.resident_status == \"Visitor\" || doc.resident_status == \"Resident\";",
+   "options": "\nGolden VISA\nGreen VISA\nEmployee VISA\nFamily VISA\nHouse Visa\nVisitor VISA"
+  },
+  {
+   "fieldname": "labor_card_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Labor Card Date of Issue"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "personnel_dependents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personnel Dependents"
+  },
+  {
+   "fieldname": "personnel_dependents_section",
+   "fieldtype": "Section Break",
+   "label": "Personnel Dependents"
+  },
+  {
+   "fieldname": "personnel_dependents",
+   "fieldtype": "Table",
+   "label": "Personnel Dependents",
+   "options": "Personnel Dependents"
+  },
+  {
+   "fieldname": "additional_personnel_documents",
+   "fieldtype": "Table",
+   "label": "Additional Personnel Documents",
+   "options": "Legal Documents"
+  },
+  {
+   "fieldname": "attach_labor_card",
+   "fieldtype": "Attach",
+   "label": "Labor Card"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_customer",
+   "fieldtype": "Check",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "iloea",
+   "fieldtype": "Data",
+   "label": "ILOE Number"
+  },
+  {
+   "fieldname": "column_break_foqd",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-04 18:29:28.160861",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Personnel",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1
+}

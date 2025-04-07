@@ -1,0 +1,196 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "WO-.##########",
+ "creation": "2024-08-08 10:44:37.104138",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "work_creation_date",
+  "linked_service_estimate",
+  "progress_percentage",
+  "column_break_yzyy",
+  "status",
+  "business_name",
+  "personnel_name",
+  "section_break_jkmj",
+  "service_name",
+  "column_break_bhsn",
+  "service_for_business",
+  "service_for_person",
+  "service_for_vehicle",
+  "actions_section",
+  "service_task",
+  "services_section",
+  "services_for",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_yzyy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nWorking\nComplete\nCancelled"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "services_section",
+   "fieldtype": "Section Break",
+   "label": "Services"
+  },
+  {
+   "fieldname": "services_for",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Services For",
+   "options": "Quotation Services"
+  },
+  {
+   "default": "Today",
+   "fieldname": "work_creation_date",
+   "fieldtype": "Date",
+   "label": "Work Create Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jkmj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bhsn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "progress_percentage",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Progress",
+   "precision": "2"
+  },
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service Name",
+   "options": "Service Template",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_for_business",
+   "fieldtype": "Link",
+   "label": "Service for Business",
+   "options": "Business",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_for_person",
+   "fieldtype": "Link",
+   "label": "Service for Person",
+   "options": "Personnel",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_for_vehicle",
+   "fieldtype": "Link",
+   "label": "Service for Vehicle",
+   "options": "Car and Carrier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_name",
+   "fieldtype": "Link",
+   "label": "Business Name",
+   "options": "Business",
+   "read_only": 1
+  },
+  {
+   "fieldname": "personnel_name",
+   "fieldtype": "Link",
+   "label": "Personnel Name",
+   "options": "Personnel",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actions_section",
+   "fieldtype": "Section Break",
+   "label": "Actions"
+  },
+  {
+   "fieldname": "service_task",
+   "fieldtype": "Table",
+   "options": "Work Action"
+  },
+  {
+   "fieldname": "linked_service_estimate",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Linked Service Estimate",
+   "options": "Service Estimate",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-17 06:01:58.767936",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Work",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Open"
+  },
+  {
+   "color": "Green",
+   "title": "Complete"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  },
+  {
+   "color": "Yellow",
+   "title": "Working"
+  }
+ ],
+ "title_field": "service_name",
+ "track_changes": 1
+}

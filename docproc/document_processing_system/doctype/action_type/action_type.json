@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:task_type",
+ "creation": "2024-12-10 13:04:52.374671",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_type",
+  "weight",
+  "description",
+  "column_break_mzpx"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_type",
+   "fieldtype": "Data",
+   "label": "Task Type",
+   "unique": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "column_break_mzpx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-10 13:09:04.006530",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Action Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "task_type"
+}

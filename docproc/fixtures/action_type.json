@@ -1,0 +1,38 @@
+[
+ {
+  "description": "Tasks related to creating and managing invoices for customers.",
+  "docstatus": 0,
+  "doctype": "Action Type",
+  "modified": "2024-12-10 13:07:32.616673",
+  "name": "Customer Invoicing",
+  "task_type": "Customer Invoicing",
+  "weight": 0.0
+ },
+ {
+  "description": "Tasks for tracking and processing fee-related payments.",
+  "docstatus": 0,
+  "doctype": "Action Type",
+  "modified": "2024-12-10 13:08:34.222234",
+  "name": "Fee Payment",
+  "task_type": "Fee Payment",
+  "weight": 0.0
+ },
+ {
+  "description": " Tasks involving the submission of applications and required documents.",
+  "docstatus": 0,
+  "doctype": "Action Type",
+  "modified": "2024-12-10 13:08:18.677084",
+  "name": "Application Submission",
+  "task_type": "Application Submission",
+  "weight": 0.0
+ },
+ {
+  "description": "Tasks that handle varied, unique or ad-hoc activities.",
+  "docstatus": 0,
+  "doctype": "Action Type",
+  "modified": "2024-12-10 13:08:50.255115",
+  "name": "Miscellaneous",
+  "task_type": "Miscellaneous",
+  "weight": 0.0
+ }
+]

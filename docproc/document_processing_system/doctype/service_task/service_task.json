@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-12 15:36:45.401538",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "m_column",
+  "subject",
+  "task_type",
+  "mode"
+ ],
+ "fields": [
+  {
+   "fetch_from": "task.type",
+   "fieldname": "task_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Task Type",
+   "options": "\nCustomer Invoicing\nApplication Submission\nFee Payment\nMiscellaneous"
+  },
+  {
+   "fetch_from": "task.custom_mode",
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Mode",
+   "options": "Office\nField"
+  },
+  {
+   "fieldname": "m_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "task.subject",
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Action"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-03 12:57:01.469297",
+ "modified_by": "Administrator",
+ "module": "Document Processing System",
+ "name": "Service Task",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
