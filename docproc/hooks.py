@@ -435,3 +435,29 @@ override_doctype_dashboards = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+# Make public directories for assets
+app_include_css = "/assets/docproc/css/style.css"
+app_include_js = ["/assets/docproc/js/react/bundle.js"]
+
+# Add CORS configuration for your frontend
+allow_cors = "*"
+
+# Whitelist API methods
+whitelisted_methods = {
+    "docproc.api.api.get_app_data": True,
+}
+
+# Add website route rules
+website_route_rules = [
+    {"from_route": "/dashboard", "to_route": "dashboard/index"},
+]
+
+# Update website route rules with additional pages
+website_route_rules = [
+    {"from_route": "/dashboard", "to_route": "dashboard/index"},
+    {"from_route": "/businesses", "to_route": "businesses/index"},
+    {"from_route": "/personnel", "to_route": "personnel/index"},
+    {"from_route": "/alerts", "to_route": "alerts/index"},
+    {"from_route": "/api-test", "to_route": "api-test/index"},
+]

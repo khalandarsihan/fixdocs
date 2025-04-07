@@ -1,0 +1,18 @@
+{% extends "templates/layout.html" %}
+
+{% block title %}Businesses - FixDocs{% endblock %}
+
+{% block header %}
+{% include "templates/includes/navbar/fixdocs_navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div id="fixdocs-business"></div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  window.socketPort = "{{ socketPort }}";
+</script>
+<script type="text/javascript" src="/assets/docproc/js/react/bundle.js"></script>
+{% endblock %}

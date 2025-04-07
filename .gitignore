@@ -4,4 +4,30 @@
 *.swp
 tags
 node_modules
-__pycache__
+__pycache__# Node modules
+frontend/node_modules/
+node_modules/
+
+# Build artifacts
+docproc/public/js/react/
+docproc/public/css/style.css
+*.map
+*.min.js
+*.min.css
+
+# Temporary files
+*.log
+*.pyc
+__pycache__/
+*.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# NPM/Yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
