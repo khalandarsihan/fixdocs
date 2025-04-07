@@ -50,7 +50,7 @@ const App = ({ module, documentId }) => {
       case 'personnel':
         return <Personnel data={data?.message} />;
       case 'alerts':
-        return <Alerts data={data?.message} />;
+        return <Alerts data={data} />;
       case 'document':
         return <DocumentViewer documentId={documentId} data={data?.message} />;
       default:

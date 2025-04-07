@@ -352,73 +352,69 @@ def get_document_data(document_id):
     except Exception as e:
         frappe.log_error(f"Error in get_document_data: {str(e)}", "FixDocs API Error")
         return {"error": str(e)}
-    
+
 @frappe.whitelist()
 def get_alerts_data():
     """
-    Get data for the alerts module
+    Get data for the alerts module matching Frappe list view fields
     
     Returns:
         dict: List of alerts with details and statistics
     """
     try:
-        # Get alerts with all necessary fields
+        # Get alerts with all necessary fields - using same fields as the Frappe list view
         alerts = frappe.get_all(
             "Alert",
             fields=[
-                "name", "document_type", "document_id", "alert_type",
-                "bill_to", "date_of_expiry", "status", "expires_in", "creation"
+                "name", "alert_type", "business", "personnel", "vehicle",
+                "status", "bill_to", "document_type", "document_id",
+                "date_of_issue", "date_of_expiry", "expires_in", 
+                "linked_service_estimate", "creation", "modified"
             ],
-            order_by="expires_in asc, status asc",  # Prioritize by expiry days
-            limit=100  # Reasonable limit for performance
-        )
-        
-        # Format alerts for frontend display
+            filters={"status": ["!=", "Canceled"]},  # Exclude canceled alerts
+            order_by="date_of_expiry asc, status asc",  # Order by expiry date first
+            limit=2000  # Higher limit to match Frappe's list view
+        )  # <-- This closing parenthesis was missing
+
+        # Format alerts for frontend display matching Frappe list view
         formatted_alerts = []
         for alert in alerts:
-            # Calculate priority based on expires_in days
-            priority = "High"
-            if alert.expires_in:
-                days_left = int(alert.expires_in)
-                if days_left > 60:
-                    priority = "Low"
-                elif days_left > 30:
-                    priority = "Medium"
-            
-            # Create formatted title - combine document type and ID
-            title = f"{alert.document_type}"
-            description = f"ID: {alert.document_id}" if alert.document_id else "No ID"
-            
-            # Add to formatted list
             formatted_alerts.append({
                 "id": alert.name,
-                "title": title,
-                "description": description,
-                "type": alert.alert_type,
-                "entity": alert.bill_to or "Unknown",
-                "date": alert.date_of_expiry,
+                "alertType": alert.alert_type,
+                "billTo": alert.bill_to or "",
+                "business": alert.business or "",
+                "personnel": alert.personnel or "",
+                "vehicle": alert.vehicle or "",
+                "documentType": alert.document_type or "",
+                "documentId": alert.document_id or "",
+                "dateOfIssue": alert.date_of_issue,
+                "dateOfExpiry": alert.date_of_expiry,
+                "expiresIn": alert.expires_in,
                 "status": alert.status,
-                "priority": priority,
-                "creationDate": alert.creation
+                "linkedEstimate": alert.linked_service_estimate,
+                "creation": alert.creation,
+                "modified": alert.modified
             })
         
         # Calculate alert statistics
         stats = {
             "total": len(alerts),
-            "open": len([a for a in formatted_alerts if a["status"] == "Open"]),
-            "inProgress": len([a for a in formatted_alerts if a["status"] == "Follow-Up"]),
-            "resolved": len([a for a in formatted_alerts if a["status"] in ["Service Estimate", "Partial Quotation", "Work-Order"]]),
-            "highPriority": len([a for a in formatted_alerts if a["priority"] == "High"])
+            "open": len([a for a in alerts if a.status == "Open"]),
+            "inProgress": len([a for a in alerts if a.status == "Follow-Up"]),
+            "resolved": len([a for a in alerts if a.status in ["Service Estimate", "Partial Quotation", "Work-Order"]]),
+            "highPriority": len([a for a in alerts if a.expires_in and int(a.expires_in) <= 30])
         }
         
         return {
             "alerts": formatted_alerts,
             "stats": stats
         }
-    
+
     except Exception as e:
         frappe.log_error(f"Error in get_alerts_data: {str(e)}", "FixDocs API Error")
         return {"error": str(e)}
+
 
 @frappe.whitelist()
 def get_alert_details(alert_id):
