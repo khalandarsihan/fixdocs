@@ -1,18 +1,15 @@
-{% extends "templates/layout.html" %}
-
-{% block title %}Alerts - FixDocs{% endblock %}
-
-{% block header %}
-{% include "templates/includes/navbar/fixdocs_navbar.html" %}
-{% endblock %}
-
-{% block content %}
+<!-- docproc/www/alerts/index.html -->
+{% extends "templates/layout.html" %} {% block title %}Alerts - FixDocs{%
+endblock %} {% block header %} {% include
+"templates/includes/navbar/fixdocs_navbar.html" %} {% endblock %} {% block
+content %}
 <div id="fixdocs-alerts"></div>
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script type="text/javascript">
   window.socketPort = "{{ socketPort }}";
 </script>
-<script type="text/javascript" src="/assets/docproc/js/react/bundle.js"></script>
+<script
+  type="text/javascript"
+  src="/assets/docproc/js/react/bundle.js"
+></script>
 {% endblock %}

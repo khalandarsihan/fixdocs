@@ -6,16 +6,28 @@
           <a href="/" class="text-xl font-bold text-primary-600">FixDocs</a>
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-          <a href="/dashboard" class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+          <a
+            href="/dashboard"
+            class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+          >
             Dashboard
           </a>
-          <a href="/businesses" class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+          <a
+            href="/businesses"
+            class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+          >
             Businesses
           </a>
-          <a href="/personnel" class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+          <a
+            href="/personnel"
+            class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+          >
             Personnel
           </a>
-          <a href="/alerts" class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+          <a
+            href="/alerts"
+            class="border-transparent text-gray-500 hover:border-primary-500 hover:text-primary-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+          >
             Alerts
           </a>
         </div>
@@ -23,20 +35,47 @@
       <div class="hidden sm:ml-6 sm:flex sm:items-center">
         <div class="ml-3 relative">
           <div>
-            <button type="button" class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button
+              type="button"
+              class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              id="user-menu-button"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
               <span class="sr-only">Open user menu</span>
-              <span class="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center">
-                <span class="text-primary-800 font-medium text-sm">{{ frappe.session.user[0] | upper }}</span>
+              <span
+                class="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center"
+              >
+                <span class="text-primary-800 font-medium text-sm"
+                  >{{ frappe.session.user[0] | upper }}</span
+                >
               </span>
             </button>
           </div>
         </div>
       </div>
       <div class="-mr-2 flex items-center sm:hidden">
-        <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
+        <button
+          type="button"
+          class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
           <span class="sr-only">Open main menu</span>
-          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            class="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>
@@ -46,25 +85,41 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="sm:hidden hidden" id="mobile-menu">
     <div class="pt-2 pb-3 space-y-1">
-      <a href="/dashboard" class="bg-primary-50 border-primary-500 text-primary-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dashboard</a>
-      <a href="/businesses" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Businesses</a>
-      <a href="/personnel" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Personnel</a>
-      <a href="/alerts" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Alerts</a>
+      <a
+        href="/dashboard"
+        class="bg-primary-50 border-primary-500 text-primary-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+        >Dashboard</a
+      >
+      <a
+        href="/businesses"
+        class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+        >Businesses</a
+      >
+      <a
+        href="/personnel"
+        class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+        >Personnel</a
+      >
+      <a
+        href="/alerts"
+        class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+        >Alerts</a
+      >
     </div>
   </div>
 </nav>
 
 <script>
   // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
+    const mobileMenu = document.getElementById("mobile-menu");
+
     if (menuButton && mobileMenu) {
-      menuButton.addEventListener('click', function() {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        mobileMenu.classList.toggle('hidden');
+      menuButton.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", !expanded);
+        mobileMenu.classList.toggle("hidden");
       });
     }
   });

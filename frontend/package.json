@@ -1,7 +1,7 @@
 {
   "name": "fixdocs-frontend",
   "version": "1.0.0",
-  "description": "Frontend for Document Processing System",
+  "description": "Frontend for FixDocs Document Management System",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -19,6 +19,7 @@
     "chart.js": "^4.3.0",
     "react-chartjs-2": "^5.2.0",
     "clsx": "^2.0.0",
+    "lucide-react": "^0.263.1",
     "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {

@@ -445,12 +445,23 @@ allow_cors = "*"
 
 # Whitelist API methods
 whitelisted_methods = {
+    "docproc.api.api.get_dashboard_data": True,
+    "docproc.api.api.get_businesses_data": True,
+    "docproc.api.api.get_personnel_data": True,
+    "docproc.api.api.get_alerts_data": True, 
+    "docproc.api.api.get_document_data": True,
     "docproc.api.api.get_app_data": True,
 }
+
 
 # Add website route rules
 website_route_rules = [
     {"from_route": "/dashboard", "to_route": "dashboard/index"},
+    {"from_route": "/businesses", "to_route": "businesses/index"},
+    {"from_route": "/personnel", "to_route": "personnel/index"},
+    {"from_route": "/alerts", "to_route": "alerts/index"},
+    {"from_route": "/api-test", "to_route": "api-test/index"},
+    {"from_route": "/document/:document_id", "to_route": "document/index"}
 ]
 
 # Update website route rules with additional pages
@@ -461,3 +472,9 @@ website_route_rules = [
     {"from_route": "/alerts", "to_route": "alerts/index"},
     {"from_route": "/api-test", "to_route": "api-test/index"},
 ]
+
+# Custom DocTypes dashboards
+# override_doctype_dashboards = {
+#     "Business": "docproc.document_processing_system.doctype.business.business_dashboard.get_data",
+#     "Individual": "docproc.document_processing_system.doctype.individual.individual_dashboard.get_data"
+# }

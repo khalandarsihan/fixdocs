@@ -1,19 +1,26 @@
+# docproc/api/api.py
 import frappe
 from frappe import _
 import json
 from datetime import datetime, timedelta
-import random  # For demo data only
 
 @frappe.whitelist()
-def get_app_data(module=None, document_id=None):
+def get_app_data(module, document_id=None):
     """
-    Get data for the React app based on the module
+    Main API endpoint for the FixDocs React application
+    
+    Args:
+        module (str): The module being requested (dashboard, business, personnel, alerts, document)
+        document_id (str, optional): Document ID if viewing a specific document
+        
+    Returns:
+        dict: Data for the requested module
     """
     try:
         if module == "dashboard":
             return get_dashboard_data()
         elif module == "business":
-            return get_business_data()
+            return get_businesses_data()
         elif module == "personnel":
             return get_personnel_data()
         elif module == "alerts":
@@ -23,86 +30,309 @@ def get_app_data(module=None, document_id=None):
         else:
             return {"error": "Invalid module or missing document ID"}
     except Exception as e:
-        frappe.log_error(frappe.get_traceback(), "API Error")
+        frappe.log_error(f"Error in get_app_data: {str(e)}", "FixDocs API Error")
         return {"error": str(e)}
 
+@frappe.whitelist()
 def get_dashboard_data():
-    """Get dashboard data including stats and recent items"""
+    """
+    Get data for the dashboard module
+    
+    Returns:
+        dict: Dashboard metrics, alerts, and upcoming renewals
+    """
     try:
-        # In a real implementation, you would query the database
-        # For now, we'll return mock data
-        
-        # Get counts from actual doctypes if they exist
-        business_count = frappe.db.count("Business") if frappe.db.exists("DocType", "Business") else random.randint(10, 50)
-        personnel_count = frappe.db.count("Personnel") if frappe.db.exists("DocType", "Personnel") else random.randint(20, 100)
-        alert_count = frappe.db.count("Alert", {"status": "Open"}) if frappe.db.exists("DocType", "Alert") else random.randint(5, 15)
-        
-        # Prepare mock data for the dashboard
+        # Get counts from various doctypes
         stats = {
-            "totalDocuments": random.randint(50, 200),
-            "expiringDocuments": random.randint(5, 20),
-            "businessCount": business_count,
-            "personnelCount": personnel_count,
-            "alertsCount": alert_count,
-            "completedTasks": random.randint(30, 80),
+            "companies": frappe.db.count("Business"),
+            "individuals": frappe.db.count("Personnel"),
+            "alerts": frappe.db.count("Alert", filters={"status": "Open"}),
+            "estimates": frappe.db.count("Service Estimate"),
+            "works": frappe.db.count("Work"),
+            "invoices": frappe.db.count("Sales Invoice"),
+            "payments": frappe.db.count("Payment Entry")
         }
         
-        # Generate some mock recent alerts
-        alert_types = ["Expiry", "Compliance", "Missing Document"]
-        statuses = ["Open", "In Progress", "Resolved"]
-        entities = ["ABC Corp", "XYZ LLC", "Global Trading", "John Smith", "Sarah Johnson"]
-        documents = ["Trade License", "Visa", "Passport", "Commercial Registration", "Insurance"]
+        # Get recent alerts (last 30 days)
+        recent_alerts = frappe.get_all(
+            "Alert",
+            fields=["name", "title", "description", "entity", "date", "status"],
+            filters={"date": [">=", frappe.utils.add_days(frappe.utils.nowdate(), -30)]},
+            order_by="date desc",
+            limit=10
+        )
         
-        recent_alerts = []
-        for i in range(5):
-            recent_alerts.append({
-                "id": f"ALT-{1001 + i}",
-                "type": random.choice(alert_types),
-                "document": random.choice(documents),
-                "entity": random.choice(entities),
-                "date": (datetime.now() - timedelta(days=random.randint(0, 10))).isoformat(),
-                "status": random.choices(statuses, weights=[0.6, 0.3, 0.1])[0],
-            })
-        
-        # Generate mock upcoming renewals
+        # Get upcoming document renewals
         upcoming_renewals = []
-        for i in range(5):
-            days_left = random.randint(1, 60)
-            expiry_date = (datetime.now() + timedelta(days=days_left)).isoformat()
-            
+        
+        # For business documents
+        business_docs = frappe.get_all(
+            "Business Document",
+            fields=["name", "document_type", "business", "expiry_date"],
+            filters={"expiry_date": [">=", frappe.utils.nowdate()]},
+            order_by="expiry_date asc",
+            limit=10
+        )
+        
+        for doc in business_docs:
             upcoming_renewals.append({
-                "id": f"DOC-{2001 + i}",
-                "document": random.choice(documents),
-                "entity": random.choice(entities),
-                "expiryDate": expiry_date,
+                "document": doc.document_type,
+                "entity": doc.business,
+                "expiryDate": doc.expiry_date
             })
+        
+        # For individual documents
+        individual_docs = frappe.get_all(
+            "Individual Document",
+            fields=["name", "document_type", "individual", "expiry_date"],
+            filters={"expiry_date": [">=", frappe.utils.nowdate()]},
+            order_by="expiry_date asc",
+            limit=10
+        )
+        
+        for doc in individual_docs:
+            upcoming_renewals.append({
+                "document": doc.document_type,
+                "entity": doc.individual,
+                "expiryDate": doc.expiry_date
+            })
+        
+        # Sort by expiry date
+        upcoming_renewals = sorted(upcoming_renewals, key=lambda x: x["expiryDate"])[:10]
+        
+        # Get recent works
+        recent_works = frappe.get_all(
+            "Work Record",
+            fields=["name", "title", "creation", "duration"],
+            order_by="creation desc",
+            limit=5
+        )
+        
+        # Format the works for display
+        formatted_works = [{
+            "title": work.title,
+            "date": work.creation,
+            "duration": f"{work.duration or 30} min"
+        } for work in recent_works]
         
         return {
             "stats": stats,
             "recentAlerts": recent_alerts,
             "upcomingRenewals": upcoming_renewals,
+            "recentWorks": formatted_works
         }
-        
+    
     except Exception as e:
-        frappe.log_error(frappe.get_traceback(), "Dashboard Data Error")
+        frappe.log_error(f"Error in get_dashboard_data: {str(e)}", "FixDocs API Error")
         return {"error": str(e)}
 
-def get_business_data():
-    """Get business listing data"""
-    # Implement based on your requirements
-    return {"message": "Business data"}
+@frappe.whitelist()
+def get_businesses_data():
+    """
+    Get data for the businesses module
+    
+    Returns:
+        dict: List of businesses with key metrics
+    """
+    try:
+        businesses = frappe.get_all(
+            "Business",
+            fields=["name", "company_name", "active", "company_legal_type", 
+                    "licence_expiry_date", "creation"],
+            order_by="creation desc"
+        )
+        
+        formatted_businesses = []
+        for business in businesses:
+            # Calculate days until license expiry
+            expiry_days = None
+            if business.licence_expiry_date:
+                today = datetime.now().date()
+                expiry = datetime.strptime(str(business.licence_expiry_date), '%Y-%m-%d').date()
+                expiry_days = (expiry - today).days
+            
+            # Get document count for this business
+            doc_count = frappe.db.count("Business")
+            
+            formatted_businesses.append({
+                "id": business.name,
+                "name": business.company_name,
+                "legalType": business.company_legal_type,
+                "isActive": business.active == 1,
+                "licenseExpiryDate": business.licence_expiry_date,
+                "expiryDays": expiry_days,
+                "documentCount": doc_count,
+                "creationDate": business.creation
+            })
+        
+        return {
+            "businesses": formatted_businesses
+        }
+    
+    except Exception as e:
+        frappe.log_error(f"Error in get_businesses_data: {str(e)}", "FixDocs API Error")
+        return {"error": str(e)}
 
+@frappe.whitelist()
 def get_personnel_data():
-    """Get personnel listing data"""
-    # Implement based on your requirements
-    return {"message": "Personnel data"}
+    """
+    Get data for the personnel module
+    
+    Returns:
+        dict: List of individuals with key metrics
+    """
+    try:
+        individuals = frappe.get_all(
+            "Personnel",
+            fields=["full_name", "personnel_type", "resident_status", 
+                    "visa_type", "primary_personnel", "active", "creation"],
+            order_by="creation desc"
+        )
+        
+        formatted_individuals = []
+        for individual in individuals:
+            # Get document count for this individual
+            doc_count = frappe.db.count("Personnel")
+            
+            # Get visa expiry date if available
+            visa_expiry = frappe.db.get_value("Personnel", 
+                                             {"full_name": individual.name}, 
+                                             "visa_date_of_expiry")
+            
+            # Calculate days until visa expiry
+            expiry_days = None
+            if visa_expiry:
+                today = datetime.now().date()
+                expiry = datetime.strptime(str(visa_expiry), '%Y-%m-%d').date()
+                expiry_days = (expiry - today).days
+            
+            formatted_individuals.append({
+                # "id": individual.name,
+                "name": individual.full_name,
+                "type": individual.personnel_type,
+                "residentStatus": individual.resident_status,
+                "visaType": individual.visa_type,
+                # "employer": individual.primary_personnel,
+                "isActive": individual.active == 1,
+                "documentCount": doc_count,
+                "visaExpiryDate": visa_expiry,
+                "expiryDays": expiry_days,
+                "creationDate": individual.creation
+            })
+        
+        return {
+            "individuals": formatted_individuals
+        }
+    
+    except Exception as e:
+        frappe.log_error(f"Error in get_personnel_data: {str(e)}", "FixDocs API Error")
+        return {"error": str(e)}
 
+@frappe.whitelist()
 def get_alerts_data():
-    """Get alerts listing data"""
-    # Implement based on your requirements
-    return {"message": "Alerts data"}
+    """
+    Get data for the alerts module
+    
+    Returns:
+        dict: List of alerts with details
+    """
+    try:
+        alerts = frappe.get_all(
+            "Alert",
+            fields=["name", "title", "description", "alert_type", "entity", 
+                    "date", "status", "priority", "creation"],
+            order_by="priority desc, date asc"
+        )
+        
+        formatted_alerts = [{
+            "id": alert.name,
+            "title": alert.title,
+            "description": alert.description,
+            "type": alert.alert_type,
+            "entity": alert.entity,
+            "date": alert.date,
+            "status": alert.status,
+            "priority": alert.priority,
+            "creationDate": alert.creation
+        } for alert in alerts]
+        
+        # Get alert statistics
+        stats = {
+            "total": len(alerts),
+            "open": len([a for a in formatted_alerts if a["status"] == "Open"]),
+            "inProgress": len([a for a in formatted_alerts if a["status"] == "In Progress"]),
+            "resolved": len([a for a in formatted_alerts if a["status"] == "Resolved"]),
+            "highPriority": len([a for a in formatted_alerts if a["priority"] == "High"])
+        }
+        
+        return {
+            "alerts": formatted_alerts,
+            "stats": stats
+        }
+    
+    except Exception as e:
+        frappe.log_error(f"Error in get_alerts_data: {str(e)}", "FixDocs API Error")
+        return {"error": str(e)}
 
+@frappe.whitelist()
 def get_document_data(document_id):
-    """Get document details"""
-    # Implement based on your requirements
-    return {"message": f"Document data for {document_id}"}
+    """
+    Get data for a specific document
+    
+    Args:
+        document_id (str): The document ID to retrieve
+        
+    Returns:
+        dict: Document details
+    """
+    try:
+        # First, determine document type
+        doc_type = None
+        
+        if frappe.db.exists("Business Document", document_id):
+            doc_type = "Business Document"
+        elif frappe.db.exists("Individual Document", document_id):
+            doc_type = "Individual Document"
+        else:
+            return {"error": "Document not found"}
+        
+        # Get document data
+        doc = frappe.get_doc(doc_type, document_id)
+        
+        # Format for frontend
+        document_data = {
+            "id": doc.name,
+            "documentType": doc.document_type,
+            "docNumber": doc.document_number,
+            "entity": doc.business if doc_type == "Business Document" else doc.individual,
+            "entityType": "Business" if doc_type == "Business Document" else "Individual",
+            "issueDate": doc.issue_date,
+            "expiryDate": doc.expiry_date,
+            "status": doc.status,
+            "attachments": []
+        }
+        
+        # Get attachments
+        attachments = frappe.get_all(
+            "File",
+            fields=["name", "file_name", "file_url", "is_private"],
+            filters={
+                "attached_to_name": document_id,
+                "attached_to_doctype": doc_type
+            }
+        )
+        
+        document_data["attachments"] = [{
+            "id": attachment.name,
+            "fileName": attachment.file_name,
+            "url": attachment.file_url,
+            "isPrivate": attachment.is_private
+        } for attachment in attachments]
+        
+        return {
+            "document": document_data
+        }
+    
+    except Exception as e:
+        frappe.log_error(f"Error in get_document_data: {str(e)}", "FixDocs API Error")
+        return {"error": str(e)}

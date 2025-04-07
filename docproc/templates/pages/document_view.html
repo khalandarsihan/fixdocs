@@ -1,0 +1,16 @@
+<!-- docproc/templates/pages/document_view.html - Example for a specific document view -->
+{% extends "templates/layout.html" %} {% block title %}{{ doc.document_type }} -
+FixDocs{% endblock %} {% block header %} {% include
+"templates/includes/navbar/fixdocs_navbar.html" %} {% endblock %} {% block
+content %}
+<div id="fixdocs-document" data-document-id="{{ doc.name }}"></div>
+{% endblock %} {% block scripts %}
+<script type="text/javascript">
+  window.socketPort = "{{ socketPort }}";
+  window.documentData = "{{ doc_json | safe }}";
+</script>
+<script
+  type="text/javascript"
+  src="/assets/docproc/js/react/bundle.js"
+></script>
+{% endblock %}

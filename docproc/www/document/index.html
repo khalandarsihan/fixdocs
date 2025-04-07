@@ -1,9 +1,9 @@
-<!-- docproc/www/personnel/index.html -->
-{% extends "templates/layout.html" %} {% block title %}Personnel - FixDocs{%
-endblock %} {% block header %} {% include
+<!-- docproc/www/document/index.html -->
+{% extends "templates/layout.html" %} {% block title %}Document Viewer -
+FixDocs{% endblock %} {% block header %} {% include
 "templates/includes/navbar/fixdocs_navbar.html" %} {% endblock %} {% block
 content %}
-<div id="fixdocs-personnel"></div>
+<div id="fixdocs-document" data-document-id="{{ doc_id }}"></div>
 {% endblock %} {% block scripts %}
 <script type="text/javascript">
   window.socketPort = "{{ socketPort }}";

@@ -1,46 +1,60 @@
-{% extends "templates/layout.html" %}
-
-{% block title %}API Test - FixDocs{% endblock %}
-
-{% block content %}
+<!-- docproc/www/api-test/index.html - Helper page to test API endpoints -->
+{% extends "templates/layout.html" %} {% block title %}API Test - FixDocs{%
+endblock %} {% block content %}
 <div class="container mx-auto p-8">
   <h1 class="text-2xl font-bold mb-6">API Test</h1>
-  
+
   <div class="bg-white rounded-lg shadow p-6">
     <div class="mb-4">
+      <select id="apiEndpoint" class="px-3 py-2 border rounded-md w-full mb-4">
+        <option value="get_dashboard_data">Dashboard Data</option>
+        <option value="get_businesses_data">Businesses Data</option>
+        <option value="get_personnel_data">Personnel Data</option>
+        <option value="get_alerts_data">Alerts Data</option>
+      </select>
+
       <button id="testApiBtn" class="bg-blue-600 text-white px-4 py-2 rounded">
-        Test Dashboard API
+        Test API
       </button>
     </div>
-    
+
     <div class="mt-6">
       <h2 class="font-semibold mb-2">Response:</h2>
-      <pre id="apiResponse" class="bg-gray-100 p-4 rounded-lg whitespace-pre-wrap max-h-96 overflow-auto">Click button to test API</pre>
+      <pre
+        id="apiResponse"
+        class="bg-gray-100 p-4 rounded-lg whitespace-pre-wrap max-h-96 overflow-auto"
+      >
+Click button to test API</pre
+      >
     </div>
   </div>
 </div>
 
 <script>
-document.getElementById('testApiBtn').addEventListener('click', async function() {
-  const responseEl = document.getElementById('apiResponse');
-  responseEl.textContent = 'Loading...';
-  
-  try {
-    const response = await fetch('/api/method/docproc.api.api.get_app_data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        module: 'dashboard'
-      })
+  document
+    .getElementById("testApiBtn")
+    .addEventListener("click", async function () {
+      const responseEl = document.getElementById("apiResponse");
+      const endpoint = document.getElementById("apiEndpoint").value;
+      responseEl.textContent = "Loading...";
+
+      try {
+        const response = await fetch(
+          `/api/method/docproc.api.api.${endpoint}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({}),
+          }
+        );
+
+        const data = await response.json();
+        responseEl.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        responseEl.textContent = "Error: " + error.message;
+      }
     });
-    
-    const data = await response.json();
-    responseEl.textContent = JSON.stringify(data, null, 2);
-  } catch (error) {
-    responseEl.textContent = 'Error: ' + error.message;
-  }
-});
 </script>
 {% endblock %}

@@ -1,3 +1,4 @@
+// src/index.js
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { FrappeProvider } from "frappe-react-sdk";
@@ -44,5 +45,8 @@ if (alertsContainer) {
 const documentContainer = document.getElementById("fixdocs-document");
 if (documentContainer) {
   const documentId = documentContainer.dataset.documentId;
-  renderWithProvider(<App module="document" documentId={documentId} />, documentContainer);
+  renderWithProvider(
+    <App module="document" documentId={documentId} />,
+    documentContainer
+  );
 }
