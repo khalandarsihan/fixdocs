@@ -451,6 +451,8 @@ whitelisted_methods = {
     "docproc.api.api.get_alerts_data": True, 
     "docproc.api.api.get_document_data": True,
     "docproc.api.api.get_app_data": True,
+    "docproc.api.business_api.get_companies": True, 
+    "docproc.api.business_api.add_company": True        
 }
 
 
@@ -478,3 +480,16 @@ website_route_rules = [
 #     "Business": "docproc.document_processing_system.doctype.business.business_dashboard.get_data",
 #     "Individual": "docproc.document_processing_system.doctype.individual.individual_dashboard.get_data"
 # }
+
+rest_endpoints = [
+    {
+        "path": "/api/method/docproc.api.business_api.get_companies",
+        "methods": ["GET"]
+    },
+    {
+        "path": "/api/method/docproc.api.business_api.add_company",
+        "methods": ["POST"]
+    }
+]
+
+cors_whitelists = ["http://localhost:3000", "http://172.18.0.3:3000"]

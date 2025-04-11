@@ -65,7 +65,7 @@ def get_dashboard_data():
             ],
             filters={"date_of_expiry": [">=", frappe.utils.add_days(frappe.utils.nowdate(), -30)]},
             order_by="date_of_expiry desc",
-            limit=10
+            limit=100  # Increased limit to get more recent alerts
         )
         
         # Get upcoming document renewals
@@ -116,7 +116,7 @@ def get_dashboard_data():
             "Work",
             fields=["name", "service_name", "work_creation_date", "notes as duration"],
             order_by="creation desc",
-            limit=50
+            limit=10
         )
         
         # Format the works for display
