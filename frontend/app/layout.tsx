@@ -1,8 +1,8 @@
-import React from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { CompanySidebar } from "@/components/company-sidebar"
 import { TopNav } from "@/components/top-nav"
+import type React from "react"
 
 import "@/styles/globals.css"
 
